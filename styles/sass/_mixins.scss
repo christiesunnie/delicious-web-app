@@ -1,0 +1,19 @@
+@mixin fontStyle($color, $fontSize, $lineHeight, $letterSpacing) {
+    color: $color;
+    font-size: $fontSize;
+    line-height: $lineHeight;
+    letter-spacing: $letterSpacing;
+}
+
+@mixin backgroundImage($image, $height) {
+    background: $primary3 url($image) center bottom no-repeat;
+    background-size: 100% 100%;
+    height: $height;
+}
+
+@mixin wrapper {
+    display: flex;
+    max-width: 1500px;
+    margin: 0 auto;
+    justify-content: space-between;
+}

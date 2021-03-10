@@ -1,0 +1,50 @@
+.home {
+    @include backgroundImage("../../assets/home/home-1.jpeg", 100vh);
+}
+
+.blog {
+    @include backgroundImage("../../assets/blog/blog-1.jpeg", 60vh);
+}
+
+.contact {
+    @include backgroundImage("../../assets/contact/contact-1.jpeg", 60vh);
+}
+
+.header__wrapper {
+    // display: flex;
+    // max-width: 1500px;
+    // margin: 0 auto;
+    // justify-content: space-between;
+    font-family: $fontFamily2;
+    width: 95%;
+    @include wrapper;
+}
+
+.header__wrapper h1 {
+    text-transform: uppercase;
+    @include fontStyle($primary2, 46px, $lineHeight1, $letterSpacing4);
+}
+
+.nav__list {
+    display: flex;
+    text-transform: uppercase;
+}
+
+.nav__link {
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+.nav__link a {
+    color: $primary2;
+}
+
+.nav__link a:hover,
+.nav__link a:active,
+.nav__link a:focus {
+    color: $secondary1;
+}
+
+.button__hamburger {
+    visibility: hidden;
+}
