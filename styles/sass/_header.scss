@@ -1,24 +1,24 @@
 .home {
-    @include backgroundImage("../../assets/home/home-1.jpeg", 100vh);
+    @include background__image("../../assets/home/home-1.jpeg", 100vh);
 }
 
 .blog {
-    @include backgroundImage("../../assets/blog/blog-1.jpeg", 60vh);
+    @include background__image("../../assets/blog/blog-1.jpeg", 60vh);
 }
 
 .contact {
-    @include backgroundImage("../../assets/contact/contact-1.jpeg", 60vh);
+    @include background__image("../../assets/contact/contact-1.jpeg", 60vh);
 }
 
 .header__wrapper {
-    font-family: $fontFamily2;
+    font-family: $font__family2;
     width: 95%;
     @include wrapper;
 }
 
 .header__wrapper h1 {
     text-transform: uppercase;
-    @include fontStyle($primary2, 46px, $lineHeight1, $letterSpacing4);
+    @include font__style($primary9, 46px, $line__height1, $letter__spacing4);
 }
 
 .nav__list {
@@ -32,7 +32,7 @@
 }
 
 .nav__link a {
-    color: $primary2;
+    color: $primary9;
 }
 
 .nav__link a:hover,

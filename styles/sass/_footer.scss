@@ -1,13 +1,13 @@
 footer {
-    background: $primary2;
+    background: $primary5;
 }
 
 .footer__wrapper h3,
 .footer__wrapper h4 {
-    margin: 0;
-    font-family: $fontFamily2;
-    line-height: $lineHeight1;
-    letter-spacing: $letterSpacing2;
+    margin: 0 0 20px 0;
+    font-family: $font__family2;
+    line-height: $line__height1;
+    letter-spacing: $letter__spacing2;
     text-transform: uppercase;
 }
 
@@ -17,18 +17,19 @@ footer {
 }
 
 .footer__wrapper h4 {
+    color: $primary2;
     font-size: 0.9rem;
 }
 
 .footer__wrapper {
-    font-family: $fontFamily1;
+    font-family: $font__family1;
     padding: 70px 0;
     width: 85%;
-    @include fontStyle(
+    @include font__style(
         lighten($primary1, 20%),
         0.7rem,
-        $lineHeight3,
-        $letterSpacing1
+        $line__height3,
+        $letter__spacing1
     );
     @include wrapper;
 }
@@ -42,20 +43,76 @@ footer {
 .footer__blog,
 .footer__social {
     flex: 1 0 33%;
-    padding: 0 70px;
+    padding: 0 50px;
 }
 
 .footer__about p,
 .footer__social p {
-    line-height: $lineHeight1;
+    line-height: $line__height1;
     padding-top: 10px;
 }
 
 .footer__about li,
-.footer__blog li {
-    border-top: 1px solid lighten($primary2, 15%);
+.footer__blog li,
+.social__list {
+    border-top: 1px solid $primary4;
+}
+
+.footer__about span {
 }
 
 .footer__blog li:first-child {
     border-top: 0;
+}
+
+.social__form {
+    font-size: 0;
+}
+
+.social__form input,
+.button__submit {
+    border: 1px solid transparent;
+    padding: 10px 12px;
+}
+
+.social__form input {
+    background: $primary7;
+    width: 85%;
+    @include font__style(lighten($primary1, 20%), 0.7rem, 0, $letter__spacing1);
+}
+
+.button__submit {
+    background: $secondary1;
+    color: $primary2;
+    font-size: 0.7rem;
+}
+
+.social__list {
+    display: flex;
+}
+
+.social__list li {
+    flex: 0 1 35px;
+}
+
+.social__list a {
+    color: $primary2;
+    font-size: 1rem;
+}
+
+.copyright {
+    background: $primary8;
+    padding: 20px 0;
+}
+
+.copyright p {
+    font-size: 0.7rem;
+    margin: 0 auto;
+    padding: 0 50px;
+    width: 85%;
+}
+
+.copyright span {
+    color: $secondary1;
+    text-transform: uppercase;
 }

@@ -284,19 +284,19 @@ template {
 }
 
 .home {
-  background: #f6f6f6 url("../../assets/home/home-1.jpeg") center bottom no-repeat;
+  background: #efefef url("../../assets/home/home-1.jpeg") center bottom no-repeat;
   background-size: 100% 100%;
   height: 100vh;
 }
 
 .blog {
-  background: #f6f6f6 url("../../assets/blog/blog-1.jpeg") center bottom no-repeat;
+  background: #efefef url("../../assets/blog/blog-1.jpeg") center bottom no-repeat;
   background-size: 100% 100%;
   height: 60vh;
 }
 
 .contact {
-  background: #f6f6f6 url("../../assets/contact/contact-1.jpeg") center bottom no-repeat;
+  background: #efefef url("../../assets/contact/contact-1.jpeg") center bottom no-repeat;
   background-size: 100% 100%;
   height: 60vh;
 }
@@ -316,7 +316,7 @@ template {
 
 .header__wrapper h1 {
   text-transform: uppercase;
-  color: #2e2e2e;
+  color: #000000;
   font-size: 46px;
   line-height: 24px;
   letter-spacing: 1.1px;
@@ -335,7 +335,7 @@ template {
 }
 
 .nav__link a {
-  color: #2e2e2e;
+  color: #000000;
 }
 
 .nav__link a:hover,
@@ -354,7 +354,7 @@ footer {
 
 .footer__wrapper h3,
 .footer__wrapper h4 {
-  margin: 0;
+  margin: 0 0 20px 0;
   font-family: "Raleway", sans-serif;
   line-height: 24px;
   letter-spacing: 0.5px;
@@ -367,6 +367,7 @@ footer {
 }
 
 .footer__wrapper h4 {
+  color: #f6f6f6;
   font-size: 0.9rem;
 }
 
@@ -399,7 +400,7 @@ footer {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 33%;
           flex: 1 0 33%;
-  padding: 0 70px;
+  padding: 0 50px;
 }
 
 .footer__about p,
@@ -409,10 +410,70 @@ footer {
 }
 
 .footer__about li,
-.footer__blog li {
-  border-top: 1px solid #545454;
+.footer__blog li,
+.social__list {
+  border-top: 1px solid #474747;
 }
 
 .footer__blog li:first-child {
   border-top: 0;
+}
+
+.social__form {
+  font-size: 0;
+}
+
+.social__form input,
+.button__submit {
+  border: 1px solid transparent;
+  padding: 10px 12px;
+}
+
+.social__form input {
+  background: #535353;
+  width: 85%;
+  color: #cccccc;
+  font-size: 0.7rem;
+  line-height: 0;
+  letter-spacing: 0.3px;
+}
+
+.button__submit {
+  background: #64a604;
+  color: #f6f6f6;
+  font-size: 0.7rem;
+}
+
+.social__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.social__list li {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 35px;
+          flex: 0 1 35px;
+}
+
+.social__list a {
+  color: #f6f6f6;
+  font-size: 1rem;
+}
+
+.copyright {
+  background: #252525;
+  padding: 20px 0;
+}
+
+.copyright p {
+  font-size: 0.7rem;
+  margin: 0 auto;
+  padding: 0 50px;
+  width: 85%;
+}
+
+.copyright span {
+  color: #64a604;
+  text-transform: uppercase;
 }

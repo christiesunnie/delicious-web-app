@@ -1,11 +1,11 @@
-@mixin fontStyle($color, $fontSize, $lineHeight, $letterSpacing) {
+@mixin font__style($color, $font__size, $line__height, $letter__spacing) {
     color: $color;
-    font-size: $fontSize;
-    line-height: $lineHeight;
-    letter-spacing: $letterSpacing;
+    font-size: $font__size;
+    line-height: $line__height;
+    letter-spacing: $letter__spacing;
 }
 
-@mixin backgroundImage($image, $height) {
+@mixin background__image($image, $height) {
     background: $primary3 url($image) center bottom no-repeat;
     background-size: 100% 100%;
     height: $height;
