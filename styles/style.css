@@ -415,6 +415,12 @@ footer {
   border-top: 1px solid #474747;
 }
 
+.footer__about li:first-child {
+  line-height: 10px;
+  padding-top: 20px;
+}
+
+.footer__about li:nth-child(2),
 .footer__blog li:first-child {
   border-top: 0;
 }
