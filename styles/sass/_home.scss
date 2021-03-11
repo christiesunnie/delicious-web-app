@@ -1,0 +1,74 @@
+main {
+    background: $primary3;
+}
+
+img {
+    max-width: 100%;
+}
+
+.recipes__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.recipes__text {
+    align-self: center;
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+}
+
+.menu__text {
+    align-self: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 25px 30px;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.menu__container {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    grid-template-rows: auto;
+    column-gap: 5px;
+}
+
+.recipes__wrapper h2,
+.menu__category h4 {
+    font-family: $font__family2;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.recipes__text h2 {
+    position: relative;
+    padding-bottom: 40px;
+    @include font__style($primary9, 1.2rem, $line__height2, $letter__spacing2);
+}
+
+.recipes__text h2::after {
+    @include underline(60%, 45%);
+}
+
+.menu__category h4 {
+    @include font__style($primary9, 18px, $line__height1, $letter__spacing2);
+}
+
+.recipes__text p,
+.menu__category p {
+    @include font__style($primary4, 14px, $line__height1, $letter__spacing1);
+}
+
+.button__recipes {
+    text-transform: uppercase;
+    cursor: pointer;
+    @include button(10px, 15px);
+}
+
+.button__recipes:hover,
+.button__recipes:focus {
+    border: 1px solid $primary9;
+}

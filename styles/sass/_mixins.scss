@@ -17,3 +17,22 @@
     margin: 0 auto;
     justify-content: space-between;
 }
+
+@mixin underline($top, $left) {
+    content: "";
+    background: $secondary1;
+    position: absolute;
+    top: $top;
+    left: $left;
+    height: 3px;
+    width: 50px;
+}
+
+@mixin button($padding1, $padding2) {
+    border: 1px solid transparent;
+    background: $secondary1;
+    color: $primary2;
+    font-size: 0.7rem;
+    padding: $padding1 $padding2;
+    text-transform: uppercase;
+}

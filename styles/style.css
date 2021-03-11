@@ -284,7 +284,7 @@ template {
 }
 
 .home {
-  background: #efefef url(../assets/blog/home-1.jpeg) center bottom no-repeat;
+  background: #efefef url(../assets/home/home-1.jpeg) center bottom no-repeat;
   background-size: 100% 100%;
   height: 100vh;
 }
@@ -346,6 +346,114 @@ template {
 
 .button__hamburger {
   visibility: hidden;
+}
+
+main {
+  background: #efefef;
+}
+
+img {
+  max-width: 100%;
+}
+
+.recipes__wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+}
+
+.recipes__text {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin: 0 auto;
+  text-align: center;
+  width: 70%;
+}
+
+.menu__text {
+  -ms-grid-row-align: center;
+      align-self: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+  gap: 25px 30px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.menu__container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30px 1fr;
+      grid-template-columns: 30px 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
+}
+
+.recipes__wrapper h2,
+.menu__category h4 {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.recipes__text h2 {
+  position: relative;
+  padding-bottom: 40px;
+  color: #000000;
+  font-size: 1.2rem;
+  line-height: 36px;
+  letter-spacing: 0.5px;
+}
+
+.recipes__text h2::after {
+  content: "";
+  background: #64a604;
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  height: 3px;
+  width: 50px;
+}
+
+.menu__category h4 {
+  color: #000000;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+.recipes__text p,
+.menu__category p {
+  color: #474747;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+}
+
+.button__recipes {
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: #64a604;
+  color: #f6f6f6;
+  font-size: 0.7rem;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+
+.button__recipes:hover,
+.button__recipes:focus {
+  border: 1px solid #000000;
 }
 
 footer {
@@ -429,14 +537,10 @@ footer {
   font-size: 0;
 }
 
-.social__form input,
-.button__submit {
-  border: 1px solid transparent;
-  padding: 10px 12px;
-}
-
 .social__form input {
   background: #535353;
+  border: 1px solid transparent;
+  padding: 10px 12px;
   width: 85%;
   color: #cccccc;
   font-size: 0.7rem;
@@ -445,9 +549,12 @@ footer {
 }
 
 .button__submit {
+  border: 1px solid transparent;
   background: #64a604;
   color: #f6f6f6;
   font-size: 0.7rem;
+  padding: 10px 12px;
+  text-transform: uppercase;
 }
 
 .social__list {

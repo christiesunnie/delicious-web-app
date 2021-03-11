@@ -72,22 +72,16 @@ footer {
     font-size: 0;
 }
 
-.social__form input,
-.button__submit {
-    border: 1px solid transparent;
-    padding: 10px 12px;
-}
-
 .social__form input {
     background: $primary7;
+    border: 1px solid transparent;
+    padding: 10px 12px;
     width: 85%;
     @include font__style(lighten($primary1, 20%), 0.7rem, 0, $letter__spacing1);
 }
 
 .button__submit {
-    background: $secondary1;
-    color: $primary2;
-    font-size: 0.7rem;
+    @include button(10px, 12px);
 }
 
 .social__list {
