@@ -284,19 +284,19 @@ template {
 }
 
 .home {
-  background: #efefef url("../../assets/home/home-1.jpeg") center bottom no-repeat;
+  background: #efefef url(../../assets/home/home-1.jpeg) center bottom no-repeat;
   background-size: 100% 100%;
   height: 100vh;
 }
 
 .blog {
-  background: #efefef url("../../assets/blog/blog-1.jpeg") center bottom no-repeat;
+  background: #efefef url(../../assets/blog/blog-1.jpeg) center bottom no-repeat;
   background-size: 100% 100%;
   height: 60vh;
 }
 
 .contact {
-  background: #efefef url("../../assets/contact/contact-1.jpeg") center bottom no-repeat;
+  background: #efefef url(../../assets/contact/contact-1.jpeg) center bottom no-repeat;
   background-size: 100% 100%;
   height: 60vh;
 }
