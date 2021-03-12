@@ -1,22 +1,67 @@
 main {
-    background: $primary3;
+    background: $primary2;
+}
+
+main h2,
+main h4 {
+    font-family: $font__family2;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+main h2 {
+    position: relative;
+    padding-bottom: 40px;
+    @include font__style($primary9, 1.2rem, $line__height2, $letter__spacing2);
+}
+
+main h4 {
+    @include font__style($primary9, 18px, $line__height1, $letter__spacing2);
+}
+
+main p {
+    font-family: $font__family1;
 }
 
 img {
     max-width: 100%;
 }
 
+.recipes__text h2::after {
+    @include underline(60%, 45%);
+}
+
+.info__text h2::after,
+.testimonials h4::after {
+    @include underline(60%, 47%);
+}
+
 .recipes__wrapper {
+    background: $primary3;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto;
 }
 
-.recipes__text {
-    align-self: center;
+.text__wrapper {
+    background: $primary2;
+    display: flex;
+    align-items: center;
+}
+
+.recipes__text,
+.menu__text {
     margin: 0 auto;
+    width: 80%;
+}
+
+.recipes__text {
     text-align: center;
-    width: 70%;
+}
+
+.recipes__image img,
+.restaurant__images img {
+    display: block;
 }
 
 .menu__text {
@@ -25,8 +70,6 @@ img {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto;
     gap: 25px 30px;
-    margin: 0 auto;
-    width: 80%;
 }
 
 .menu__container {
@@ -36,39 +79,116 @@ img {
     column-gap: 5px;
 }
 
-.recipes__wrapper h2,
-.menu__category h4 {
-    font-family: $font__family2;
-    margin: 0;
-    text-transform: uppercase;
-}
-
-.recipes__text h2 {
-    position: relative;
-    padding-bottom: 40px;
-    @include font__style($primary9, 1.2rem, $line__height2, $letter__spacing2);
-}
-
-.recipes__text h2::after {
-    @include underline(60%, 45%);
-}
-
-.menu__category h4 {
-    @include font__style($primary9, 18px, $line__height1, $letter__spacing2);
-}
-
 .recipes__text p,
-.menu__category p {
+.menu__category p,
+.info__text p {
     @include font__style($primary4, 14px, $line__height1, $letter__spacing1);
 }
 
+.recipes__text p,
+.info__text p {
+    @include font__style($primary4, 0.9rem, $line__height1, $letter__spacing1);
+}
+
 .button__recipes {
+    font-family: $font__family2;
+    margin: 20px auto;
     text-transform: uppercase;
     cursor: pointer;
-    @include button(10px, 15px);
+    @include button(15px, 30px);
 }
 
 .button__recipes:hover,
 .button__recipes:focus {
     border: 1px solid $primary9;
+}
+
+.restaurant__wrapper {
+    background: $primary2;
+}
+
+.restaurant__info {
+    padding: 170px 0 100px 0;
+}
+
+.restaurant__info,
+.testimonials {
+    margin: 0 auto;
+    text-align: center;
+    width: 50%;
+}
+
+.info__images {
+    padding: 40px 0;
+    position: relative;
+}
+
+.image2 {
+    position: absolute;
+    right: 100px;
+    top: -80px;
+}
+
+.restaurant__images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+}
+
+.restaurant__testimonials {
+    background: $secondary2;
+    padding: 100px 0 150px 0;
+    position: relative;
+}
+
+.testimonials h4 {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.testimonials p {
+    margin: 0;
+    font-style: italic;
+    position: relative;
+    @include font__style($primary9, 0.9rem, $line__height2, $letter__spacing3);
+}
+
+.testimonials p::before,
+.testimonials p::after {
+    font-size: 5rem;
+    color: $secondary3;
+    font-weight: bold;
+    position: absolute;
+}
+
+.testimonials p::before {
+    content: open-quote;
+    top: 15px;
+    left: -70px;
+}
+
+.testimonials p::after {
+    content: close-quote;
+    bottom: 0px;
+    right: -70px;
+}
+
+.restaurant__testimonials::before,
+.restaurant__testimonials::after {
+    position: absolute;
+    bottom: 20%;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.restaurant__testimonials::before {
+    content: "\003c";
+    color: $secondary3;
+    left: 48%;
+}
+
+.restaurant__testimonials::after {
+    content: "\003e";
+    color: #fff;
+    right: 49%;
 }

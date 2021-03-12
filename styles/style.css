@@ -284,19 +284,19 @@ template {
 }
 
 .home {
-  background: #efefef url(../assets/home/home-1.jpeg) center bottom no-repeat;
+  background: url(../assets/home/home_1.jpeg) center bottom no-repeat;
   background-size: 100% 100%;
   height: 100vh;
 }
 
 .blog {
-  background: #efefef url(../assets/blog/blog-1.jpeg) center bottom no-repeat;
+  background: url(../assets/blog/blog_1.jpeg) center bottom no-repeat;
   background-size: 100% 100%;
   height: 60vh;
 }
 
 .contact {
-  background: #efefef url(../assets/contact/contact-1.jpeg) center bottom no-repeat;
+  background: url(../assets/contact/contact_1.jpeg) center bottom no-repeat;
   background-size: 100% 100%;
   height: 60vh;
 }
@@ -349,14 +349,63 @@ template {
 }
 
 main {
-  background: #efefef;
+  background: #f6f6f6;
+}
+
+main h2,
+main h4 {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+main h2 {
+  position: relative;
+  padding-bottom: 40px;
+  color: #000000;
+  font-size: 1.2rem;
+  line-height: 36px;
+  letter-spacing: 0.5px;
+}
+
+main h4 {
+  color: #000000;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+main p {
+  font-family: "Lora", serif;
 }
 
 img {
   max-width: 100%;
 }
 
+.recipes__text h2::after {
+  content: "";
+  background: #64a604;
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  height: 3px;
+  width: 50px;
+}
+
+.info__text h2::after,
+.testimonials h4::after {
+  content: "";
+  background: #64a604;
+  position: absolute;
+  top: 60%;
+  left: 47%;
+  height: 3px;
+  width: 50px;
+}
+
 .recipes__wrapper {
+  background: #efefef;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -365,13 +414,29 @@ img {
       grid-template-rows: auto auto;
 }
 
-.recipes__text {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+.text__wrapper {
+  background: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.recipes__text,
+.menu__text {
   margin: 0 auto;
+  width: 80%;
+}
+
+.recipes__text {
   text-align: center;
-  width: 70%;
+}
+
+.recipes__image img,
+.restaurant__images img {
+  display: block;
 }
 
 .menu__text {
@@ -384,8 +449,6 @@ img {
   -ms-grid-rows: auto auto auto;
       grid-template-rows: auto auto auto;
   gap: 25px 30px;
-  margin: 0 auto;
-  width: 80%;
 }
 
 .menu__container {
@@ -399,61 +462,135 @@ img {
           column-gap: 5px;
 }
 
-.recipes__wrapper h2,
-.menu__category h4 {
-  font-family: "Raleway", sans-serif;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.recipes__text h2 {
-  position: relative;
-  padding-bottom: 40px;
-  color: #000000;
-  font-size: 1.2rem;
-  line-height: 36px;
-  letter-spacing: 0.5px;
-}
-
-.recipes__text h2::after {
-  content: "";
-  background: #64a604;
-  position: absolute;
-  top: 60%;
-  left: 45%;
-  height: 3px;
-  width: 50px;
-}
-
-.menu__category h4 {
-  color: #000000;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 0.5px;
-}
-
 .recipes__text p,
-.menu__category p {
+.menu__category p,
+.info__text p {
   color: #474747;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.3px;
 }
 
+.recipes__text p,
+.info__text p {
+  color: #474747;
+  font-size: 0.9rem;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+}
+
 .button__recipes {
+  font-family: "Raleway", sans-serif;
+  margin: 20px auto;
   text-transform: uppercase;
   cursor: pointer;
   border: 1px solid transparent;
   background: #64a604;
   color: #f6f6f6;
   font-size: 0.7rem;
-  padding: 10px 15px;
+  padding: 15px 30px;
   text-transform: uppercase;
 }
 
 .button__recipes:hover,
 .button__recipes:focus {
   border: 1px solid #000000;
+}
+
+.restaurant__wrapper {
+  background: #f6f6f6;
+}
+
+.restaurant__info {
+  padding: 170px 0 100px 0;
+}
+
+.restaurant__info,
+.testimonials {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}
+
+.info__images {
+  padding: 40px 0;
+  position: relative;
+}
+
+.image2 {
+  position: absolute;
+  right: 100px;
+  top: -80px;
+}
+
+.restaurant__images {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: auto auto;
+      grid-template-rows: auto auto;
+}
+
+.restaurant__testimonials {
+  background: #dded9a;
+  padding: 100px 0 150px 0;
+  position: relative;
+}
+
+.testimonials h4 {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.testimonials p {
+  margin: 0;
+  font-style: italic;
+  position: relative;
+  color: #000000;
+  font-size: 0.9rem;
+  line-height: 36px;
+  letter-spacing: 0.6px;
+}
+
+.testimonials p::before,
+.testimonials p::after {
+  font-size: 5rem;
+  color: #eef6d1;
+  font-weight: bold;
+  position: absolute;
+}
+
+.testimonials p::before {
+  content: open-quote;
+  top: 15px;
+  left: -70px;
+}
+
+.testimonials p::after {
+  content: close-quote;
+  bottom: 0px;
+  right: -70px;
+}
+
+.restaurant__testimonials::before,
+.restaurant__testimonials::after {
+  position: absolute;
+  bottom: 20%;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.restaurant__testimonials::before {
+  content: "\003c";
+  color: #eef6d1;
+  left: 48%;
+}
+
+.restaurant__testimonials::after {
+  content: "\003e";
+  color: #fff;
+  right: 49%;
 }
 
 footer {
@@ -498,7 +635,26 @@ footer {
 }
 
 .footer__wrapper a,
-.copyright {
+.copyright,
+.social__form input::-webkit-input-placeholder {
+  color: #cccccc;
+}
+
+.footer__wrapper a,
+.copyright,
+.social__form input:-ms-input-placeholder {
+  color: #cccccc;
+}
+
+.footer__wrapper a,
+.copyright,
+.social__form input::-ms-input-placeholder {
+  color: #cccccc;
+}
+
+.footer__wrapper a,
+.copyright,
+.social__form input::placeholder {
   color: #cccccc;
 }
 
@@ -546,6 +702,22 @@ footer {
   font-size: 0.7rem;
   line-height: 0;
   letter-spacing: 0.3px;
+}
+
+.social__form input::-webkit-input-placeholder {
+  font-family: "Lora", serif;
+}
+
+.social__form input:-ms-input-placeholder {
+  font-family: "Lora", serif;
+}
+
+.social__form input::-ms-input-placeholder {
+  font-family: "Lora", serif;
+}
+
+.social__form input::placeholder {
+  font-family: "Lora", serif;
 }
 
 .button__submit {

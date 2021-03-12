@@ -1,13 +1,13 @@
 .home {
-    @include background__image(url(../assets/home/home-1.jpeg), 100vh);
+    @include background__image(url(../assets/home/home_1.jpeg), 100vh);
 }
 
 .blog {
-    @include background__image(url(../assets/blog/blog-1.jpeg), 60vh);
+    @include background__image(url(../assets/blog/blog_1.jpeg), 60vh);
 }
 
 .contact {
-    @include background__image(url(../assets/contact/contact-1.jpeg), 60vh);
+    @include background__image(url(../assets/contact/contact_1.jpeg), 60vh);
 }
 
 .header__wrapper {

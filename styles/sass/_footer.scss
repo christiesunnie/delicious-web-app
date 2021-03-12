@@ -35,7 +35,8 @@ footer {
 }
 
 .footer__wrapper a,
-.copyright {
+.copyright,
+.social__form input::placeholder {
     color: lighten($primary1, 20%);
 }
 
@@ -78,6 +79,10 @@ footer {
     padding: 10px 12px;
     width: 85%;
     @include font__style(lighten($primary1, 20%), 0.7rem, 0, $letter__spacing1);
+}
+
+.social__form input::placeholder {
+    font-family: $font__family1;
 }
 
 .button__submit {
