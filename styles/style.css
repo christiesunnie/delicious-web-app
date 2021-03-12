@@ -348,18 +348,18 @@ template {
   visibility: hidden;
 }
 
-main {
+.home__wrapper {
   background: #f6f6f6;
 }
 
-main h2,
-main h4 {
+.home__wrapper h2,
+.home__wrapper h4 {
   font-family: "Raleway", sans-serif;
   margin: 0;
   text-transform: uppercase;
 }
 
-main h2 {
+.home__wrapper h2 {
   position: relative;
   padding-bottom: 40px;
   color: #000000;
@@ -368,14 +368,14 @@ main h2 {
   letter-spacing: 0.5px;
 }
 
-main h4 {
+.home__wrapper h4 {
   color: #000000;
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0.5px;
 }
 
-main p {
+.home__wrapper p {
   font-family: "Lora", serif;
 }
 
