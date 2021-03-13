@@ -4,9 +4,8 @@
 
 .home__wrapper h2,
 .home__wrapper h4 {
-    font-family: $font__family2;
     margin: 0;
-    text-transform: uppercase;
+    @include text__uppercase;
 }
 
 .home__wrapper h2 {
@@ -21,10 +20,6 @@
 
 .home__wrapper p {
     font-family: $font__family1;
-}
-
-img {
-    max-width: 100%;
 }
 
 .recipes__text h2::after {
@@ -66,10 +61,8 @@ img {
 
 .menu__text {
     align-self: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
     gap: 25px 30px;
+    @include grid23;
 }
 
 .menu__container {
@@ -94,13 +87,12 @@ img {
     font-family: $font__family2;
     margin: 20px auto;
     text-transform: uppercase;
-    cursor: pointer;
     @include button(15px, 30px);
 }
 
 .button__recipes:hover,
 .button__recipes:focus {
-    border: 1px solid $primary9;
+    @include button__cursor;
 }
 
 .restaurant__wrapper {
@@ -130,9 +122,7 @@ img {
 }
 
 .restaurant__images {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
+    @include grid32;
 }
 
 .restaurant__testimonials {

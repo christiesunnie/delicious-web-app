@@ -5,10 +5,9 @@ footer {
 .footer__wrapper h3,
 .footer__wrapper h4 {
     margin: 0 0 20px 0;
-    font-family: $font__family2;
     line-height: $line__height1;
     letter-spacing: $letter__spacing2;
-    text-transform: uppercase;
+    @include text__uppercase;
 }
 
 .footer__wrapper h3 {
@@ -22,9 +21,10 @@ footer {
 }
 
 .footer__wrapper {
+    display: flex;
     font-family: $font__family1;
     padding: 70px 0;
-    width: 85%;
+    justify-content: space-between;
     @include font__style(
         lighten($primary1, 20%),
         0.7rem,
@@ -89,6 +89,11 @@ footer {
     @include button(10px, 12px);
 }
 
+.button__submit:hover,
+.button__submit:focus {
+    @include button__cursor;
+}
+
 .social__list {
     display: flex;
 }
@@ -100,6 +105,11 @@ footer {
 .social__list a {
     color: $primary2;
     font-size: 1rem;
+}
+
+.social__list a:hover,
+.social__list a:focus {
+    color: $secondary1;
 }
 
 .copyright {

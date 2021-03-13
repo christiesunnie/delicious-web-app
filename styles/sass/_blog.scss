@@ -1,0 +1,149 @@
+// Main blog wrapper style
+.blog__wrapper {
+    padding: 70px 50px 150px 50px;
+    @include wrapper;
+}
+
+// Blog heading title styles
+.blog__wrapper h2,
+.blog__wrapper h4,
+.button__comment {
+    margin-bottom: 0;
+    @include text__uppercase;
+}
+
+.blog__wrapper p,
+.blog__wrapper a,
+.comment__form input,
+.comment__form textarea {
+    font-family: $font__family1;
+    @include font__style($primary4, 0.9rem, $line__height1, $letter__spacing1);
+}
+
+.blog__wrapper a {
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.blog__wrapper a:hover,
+.blog__wrapper a:focus {
+    color: $secondary1;
+}
+
+.blog__wrapper a,
+p.blog__date {
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+// Blog divider sections style
+.blog__content,
+.blog__social,
+.author__container,
+.blog__posts {
+    border-bottom: 1px solid $primary3;
+}
+
+// Blog content styles
+.blog__content p:not(.blog__date) {
+    padding-top: 10px;
+}
+
+// Blog author styles
+.blog__social {
+    padding-bottom: 20px;
+}
+
+.blog__share a {
+    padding: 0 10px;
+}
+
+.author__container {
+    display: flex;
+    padding: 40px 0;
+}
+
+.author__image,
+.comment__image {
+    flex: 1 0 auto;
+    padding-right: 30px;
+}
+
+.author__bio,
+.comment__text {
+    background: $primary2;
+    padding: 0 40px;
+}
+
+// Blog posts section styles
+.post {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+}
+
+// Blog comment section style
+.blog__comments h4 {
+    padding: 10px 0 20px 0;
+}
+.comment {
+    display: flex;
+    padding: 20px 0;
+}
+
+.comment__text {
+    position: relative;
+}
+
+.comment__text::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: $primary2;
+    top: 15px;
+    left: -5px;
+    transform: rotate(45deg);
+}
+
+.comment__text span,
+.comment__text .blog__date {
+    font-family: $font__family2;
+}
+
+.comment__text span {
+    font-size: 1rem;
+}
+
+// Blog form section sty;e
+.blog__form p:nth-child(2) {
+    font-style: italic;
+}
+
+.comment__form {
+    gap: 25px;
+    @include grid32;
+}
+
+.comment__form input,
+.comment__form textarea {
+    @include form(_, $primary3);
+}
+
+.comment__message {
+    grid-column: 1 / -1;
+}
+
+.comment__message textarea {
+    width: 100%;
+}
+
+.button__comment {
+    margin: 20px auto;
+    @include button(15px, 20px);
+}
+
+.button__comment:hover,
+.button__comment:focus {
+    @include button__cursor;
+}

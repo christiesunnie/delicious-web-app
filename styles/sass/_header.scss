@@ -11,19 +11,32 @@
 }
 
 .header__wrapper {
-    font-family: $font__family2;
-    width: 95%;
+    display: flex;
+    justify-content: space-between;
     @include wrapper;
 }
 
+.header__wrapper h1,
+.nav__list {
+    @include text__uppercase;
+}
+
 .header__wrapper h1 {
-    text-transform: uppercase;
     @include font__style($primary9, 46px, $line__height1, $letter__spacing4);
+}
+
+.header__wrapper a {
+    color: $primary9;
+}
+
+.header__wrapper a:hover,
+.header__wrapper a:active,
+.header__wrapper a:focus {
+    color: $secondary1;
 }
 
 .nav__list {
     display: flex;
-    text-transform: uppercase;
 }
 
 .nav__link {
@@ -31,14 +44,29 @@
     margin-top: 10px;
 }
 
-.nav__link a {
-    color: $primary9;
+.nav__link.cart {
+    position: relative;
 }
 
-.nav__link a:hover,
-.nav__link a:active,
-.nav__link a:focus {
-    color: $secondary1;
+.nav__link.cart::before {
+    content: "";
+    color: $primary2;
+    background: $secondary1;
+    border-radius: 50%;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: -10px;
+    right: -13px;
+}
+
+.nav__link.cart::after {
+    content: "2";
+    color: #fff;
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: -7px;
+    right: -7px;
 }
 
 .button__hamburger {

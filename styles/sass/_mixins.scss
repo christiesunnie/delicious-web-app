@@ -5,6 +5,11 @@
     letter-spacing: $letter__spacing;
 }
 
+@mixin text__uppercase {
+    font-family: $font__family2;
+    text-transform: uppercase;
+}
+
 @mixin background__image($image, $height) {
     background: $image center bottom no-repeat;
     background-size: 100% 100%;
@@ -12,10 +17,9 @@
 }
 
 @mixin wrapper {
-    display: flex;
     max-width: 1500px;
     margin: 0 auto;
-    justify-content: space-between;
+    width: 85%;
 }
 
 @mixin underline($top, $left) {
@@ -35,4 +39,28 @@
     font-size: 0.7rem;
     padding: $padding1 $padding2;
     text-transform: uppercase;
+}
+
+@mixin button__cursor {
+    color: $primary9;
+    cursor: pointer;
+}
+
+@mixin grid23 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+}
+
+@mixin grid32 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+@mixin form($background: #fff, $border__color: #f6f6f6) {
+    background: $background;
+    border: 1px solid $border__color;
+    padding: 7px 10px;
+    width: 25vw;
 }
