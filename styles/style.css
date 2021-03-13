@@ -377,10 +377,6 @@ template {
   visibility: hidden;
 }
 
-.home__wrapper {
-  background: #f6f6f6;
-}
-
 .home__wrapper h2,
 .home__wrapper h4 {
   margin: 0;
@@ -440,7 +436,7 @@ template {
 }
 
 .text__wrapper {
-  background: #f6f6f6;
+  background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -520,10 +516,6 @@ template {
 .button__recipes:focus {
   color: #000000;
   cursor: pointer;
-}
-
-.restaurant__wrapper {
-  background: #f6f6f6;
 }
 
 .restaurant__info {
