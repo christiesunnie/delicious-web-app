@@ -526,8 +526,8 @@ img {
 .restaurant__images {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   -ms-grid-rows: auto auto;
       grid-template-rows: auto auto;
 }
@@ -591,6 +591,133 @@ img {
   content: "\003e";
   color: #fff;
   right: 49%;
+}
+
+.contact__form {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 40px;
+          column-gap: 40px;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+}
+
+.form__wrapper {
+  justify-self: flex-end;
+  padding: 40px 0;
+}
+
+.contact__wrapper h2,
+.contact__wrapper h4,
+.info__hours p:first-of-type span,
+.button__send {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+}
+
+.contact__wrapper h2 {
+  padding-bottom: 10px;
+  color: #000000;
+  font-size: 1rem;
+  line-height: 36px;
+  letter-spacing: 0.5px;
+}
+
+.contact__wrapper h4 {
+  margin-bottom: 15px;
+  color: #000000;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+}
+
+.contact__wrapper p,
+.info__address li,
+.form__wrapper input,
+.form__wrapper textarea {
+  font-family: "Lora", serif;
+  color: #474747;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+}
+
+.form__wrapper form {
+  display: -ms-grid;
+  display: grid;
+  gap: 25px;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto auto;
+      grid-template-rows: auto auto auto;
+}
+
+.info__wrapper {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background: #f6f6f6;
+}
+
+.form__wrapper input,
+.form__wrapper textarea {
+  background: #f6f6f6;
+  border: 1px solid transparent;
+  padding: 7px 10px;
+  width: 25vw;
+}
+
+.form__subject,
+.form__message {
+  grid-column: 1 / -1;
+}
+
+.form__subject input,
+.form__message textarea {
+  width: 100%;
+}
+
+.button__send {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #64a604;
+  margin: 40px 0;
+  padding: 0;
+}
+
+.info__content {
+  max-width: 65%;
+  margin: 60px 0 60px 30px;
+}
+
+.info__details,
+.info__address,
+.info__hours {
+  margin-top: 60px;
+}
+
+.info__hours p:first-of-type span {
+  font-weight: bold;
+}
+
+.info__hours p:last-of-type {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.info__hours p,
+.info__address ul {
+  margin: 0;
+}
+
+.info__address li:nth-child(3) {
+  padding: 20px 0;
+}
+
+.contact__image img {
+  display: block;
 }
 
 footer {
