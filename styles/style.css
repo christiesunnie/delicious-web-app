@@ -299,7 +299,7 @@ template {
 .contact {
   background: url(../assets/contact/contact_1.jpeg) center bottom no-repeat;
   background-size: 100% 100%;
-  height: 60vh;
+  height: 70vh;
 }
 
 .header__wrapper {
@@ -311,7 +311,7 @@ template {
           justify-content: space-between;
   max-width: 1500px;
   margin: 0 auto;
-  width: 85%;
+  width: 95%;
 }
 
 .header__wrapper h1,

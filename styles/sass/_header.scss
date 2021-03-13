@@ -7,13 +7,13 @@
 }
 
 .contact {
-    @include background__image(url(../assets/contact/contact_1.jpeg), 60vh);
+    @include background__image(url(../assets/contact/contact_1.jpeg), 70vh);
 }
 
 .header__wrapper {
     display: flex;
     justify-content: space-between;
-    @include wrapper;
+    @include wrapper(95%);
 }
 
 .header__wrapper h1,
