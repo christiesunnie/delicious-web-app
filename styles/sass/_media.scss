@@ -1,0 +1,78 @@
+@media (max-width: 1432px) {
+    // Wrapper styles
+    .recipes__wrapper,
+    .blog__wrapper,
+    .footer__wrapper {
+        @include wrapper(95%);
+    }
+
+    // Home page menu section
+    .recipes__wrapper {
+        background: #fff;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-items: center;
+    }
+
+    .menu__text {
+        grid-row-start: 3;
+    }
+
+    .recipes__text,
+    .menu__text {
+        margin: 0px auto;
+        padding: 70px 50px;
+        width: 100%;
+    }
+
+    .menu__category p {
+        @include font__style(
+            $primary4,
+            18px,
+            $line__height1,
+            $letter__spacing1
+        );
+    }
+
+    .recipes__text h2::after {
+        @include underline(60%, 47%);
+    }
+
+    // Blog page style
+    .post h4 {
+        font-size: 0.8rem;
+    }
+
+    // Contact page style
+    .contact__form {
+        grid-template-columns: 1fr 1fr;
+        padding-left: 70px;
+    }
+
+    .info__content {
+        max-width: 75%;
+        padding: 90px 0 10px 30px;
+    }
+
+    // Footer styles
+    .footer__about {
+        padding-left: 30px;
+        padding-right: 40px;
+    }
+
+    .footer__blog {
+        padding-left: 30px;
+        padding-right: 40px;
+    }
+
+    .footer__social {
+        padding-left: 40px;
+        padding-right: 30px;
+    }
+
+    .copyright p {
+        padding: 0 30px;
+        width: 95%;
+    }
+}

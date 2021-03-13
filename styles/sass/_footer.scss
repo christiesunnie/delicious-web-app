@@ -44,8 +44,21 @@ footer {
 .footer__blog,
 .footer__social {
     flex: 1 0 33%;
-    padding-right: 90px;
+}
+
+.footer__about {
     padding-left: 50px;
+    padding-right: 90px;
+}
+
+.footer__blog {
+    padding-left: 60px;
+    padding-right: 50px;
+}
+
+.footer__social {
+    padding-left: 90px;
+    padding-right: 50px;
 }
 
 .footer__about p,

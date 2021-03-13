@@ -92,8 +92,12 @@ p.blog__date {
 
 .post {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding: 30px 0;
+}
+
+.post div:nth-child(2) {
+    padding: 0 20px;
 }
 
 // Blog comment section style
@@ -148,6 +152,7 @@ p.blog__date {
     grid-column: 1 / -1;
 }
 
+.comment__form input,
 .comment__message textarea {
     width: 100%;
 }
