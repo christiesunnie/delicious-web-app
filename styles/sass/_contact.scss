@@ -8,7 +8,7 @@
 
 .form__wrapper {
     justify-self: flex-end;
-    padding: 40px 0;
+    padding: 90px 0;
 }
 
 // Heading styles
@@ -49,7 +49,6 @@
 }
 
 .info__wrapper {
-    align-self: center;
     background: $primary2;
 }
 
@@ -79,13 +78,12 @@
 // Contact details section styles
 .info__content {
     max-width: 65%;
-    margin: 60px 0 60px 30px;
+    padding: 90px 0 10px 30px;
 }
 
-.info__details,
 .info__address,
 .info__hours {
-    margin-top: 60px;
+    padding-top: 40px;
 }
 
 .info__hours p:first-of-type span {

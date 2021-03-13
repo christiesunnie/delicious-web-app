@@ -2,7 +2,7 @@ footer {
     background: $primary5;
 }
 
-.footer__wrapper h3,
+.footer__wrapper h2,
 .footer__wrapper h4 {
     margin: 0 0 20px 0;
     line-height: $line__height1;
@@ -10,9 +10,9 @@ footer {
     @include text__uppercase;
 }
 
-.footer__wrapper h3 {
+.footer__wrapper h2 {
     color: $secondary1;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }
 
 .footer__wrapper h4 {
@@ -44,7 +44,8 @@ footer {
 .footer__blog,
 .footer__social {
     flex: 1 0 33%;
-    padding: 0 50px;
+    padding-right: 90px;
+    padding-left: 50px;
 }
 
 .footer__about p,

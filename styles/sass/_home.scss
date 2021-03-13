@@ -127,7 +127,11 @@
 
 .restaurant__testimonials {
     background: $secondary2;
-    padding: 100px 0 150px 0;
+    padding: 150px 0 200px 0;
+    position: relative;
+}
+
+.testimonials {
     position: relative;
 }
 
@@ -139,46 +143,40 @@
 .testimonials p {
     margin: 0;
     font-style: italic;
-    position: relative;
     @include font__style($primary9, 0.9rem, $line__height2, $letter__spacing3);
 }
 
-.testimonials p::before,
-.testimonials p::after {
-    font-size: 5rem;
+.quote--left,
+.quote--right {
+    font-size: 2rem;
     color: $secondary3;
-    font-weight: bold;
     position: absolute;
 }
 
-.testimonials p::before {
-    content: open-quote;
-    top: 15px;
+.quote--left {
+    top: 50px;
     left: -70px;
 }
 
-.testimonials p::after {
-    content: close-quote;
-    bottom: 0px;
-    right: -70px;
+.quote--right {
+    bottom: 0;
+    right: -60px;
 }
 
-.restaurant__testimonials::before,
-.restaurant__testimonials::after {
+.angle--left,
+.angle--right {
+    bottom: -40%;
+    font-size: 1.5rem;
     position: absolute;
-    bottom: 20%;
-    font-size: 1rem;
-    font-weight: bold;
 }
 
-.restaurant__testimonials::before {
-    content: "\003c";
+.angle--left {
     color: $secondary3;
-    left: 48%;
+    left: 45%;
 }
 
-.restaurant__testimonials::after {
-    content: "\003e";
+.angle--right {
     color: #fff;
-    right: 49%;
+    font-weight: bold;
+    right: 46%;
 }

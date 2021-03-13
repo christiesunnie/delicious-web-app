@@ -32,6 +32,7 @@
 
 .blog__wrapper a,
 p.blog__date {
+    color: $primary4;
     margin-top: 5px;
     font-size: 16px;
 }
@@ -49,9 +50,18 @@ p.blog__date {
     padding-top: 10px;
 }
 
+.blog__content p:first-of-type {
+    font-family: $font__family2;
+}
+
 // Blog author styles
 .blog__social {
     padding-bottom: 20px;
+}
+
+.blog__tags a,
+.blog__share a {
+    color: lighten($primary4, 20%);
 }
 
 .blog__share a {
@@ -76,6 +86,10 @@ p.blog__date {
 }
 
 // Blog posts section styles
+.blog__posts {
+    padding: 10px 0;
+}
+
 .post {
     display: flex;
     justify-content: space-around;

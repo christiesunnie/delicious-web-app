@@ -559,7 +559,11 @@ template {
 
 .restaurant__testimonials {
   background: #dded9a;
-  padding: 100px 0 150px 0;
+  padding: 150px 0 200px 0;
+  position: relative;
+}
+
+.testimonials {
   position: relative;
 }
 
@@ -571,51 +575,45 @@ template {
 .testimonials p {
   margin: 0;
   font-style: italic;
-  position: relative;
   color: #000000;
   font-size: 0.9rem;
   line-height: 36px;
   letter-spacing: 0.6px;
 }
 
-.testimonials p::before,
-.testimonials p::after {
-  font-size: 5rem;
+.quote--left,
+.quote--right {
+  font-size: 2rem;
   color: #eef6d1;
-  font-weight: bold;
   position: absolute;
 }
 
-.testimonials p::before {
-  content: open-quote;
-  top: 15px;
+.quote--left {
+  top: 50px;
   left: -70px;
 }
 
-.testimonials p::after {
-  content: close-quote;
-  bottom: 0px;
-  right: -70px;
+.quote--right {
+  bottom: 0;
+  right: -60px;
 }
 
-.restaurant__testimonials::before,
-.restaurant__testimonials::after {
+.angle--left,
+.angle--right {
+  bottom: -40%;
+  font-size: 1.5rem;
   position: absolute;
-  bottom: 20%;
-  font-size: 1rem;
-  font-weight: bold;
 }
 
-.restaurant__testimonials::before {
-  content: "\003c";
+.angle--left {
   color: #eef6d1;
-  left: 48%;
+  left: 45%;
 }
 
-.restaurant__testimonials::after {
-  content: "\003e";
+.angle--right {
   color: #fff;
-  right: 49%;
+  font-weight: bold;
+  right: 46%;
 }
 
 .blog__wrapper {
@@ -656,6 +654,7 @@ template {
 
 .blog__wrapper a,
 p.blog__date {
+  color: #474747;
   margin-top: 5px;
   font-size: 16px;
 }
@@ -671,8 +670,17 @@ p.blog__date {
   padding-top: 10px;
 }
 
+.blog__content p:first-of-type {
+  font-family: "Raleway", sans-serif;
+}
+
 .blog__social {
   padding-bottom: 20px;
+}
+
+.blog__tags a,
+.blog__share a {
+  color: #7a7a7a;
 }
 
 .blog__share a {
@@ -698,6 +706,10 @@ p.blog__date {
 .comment__text {
   background: #f6f6f6;
   padding: 0 40px;
+}
+
+.blog__posts {
+  padding: 10px 0;
 }
 
 .post {
@@ -804,7 +816,7 @@ p.blog__date {
 
 .form__wrapper {
   justify-self: flex-end;
-  padding: 40px 0;
+  padding: 90px 0;
 }
 
 .contact__wrapper h2,
@@ -859,9 +871,6 @@ p.blog__date {
 }
 
 .info__wrapper {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   background: #f6f6f6;
 }
 
@@ -893,13 +902,12 @@ p.blog__date {
 
 .info__content {
   max-width: 65%;
-  margin: 60px 0 60px 30px;
+  padding: 90px 0 10px 30px;
 }
 
-.info__details,
 .info__address,
 .info__hours {
-  margin-top: 60px;
+  padding-top: 40px;
 }
 
 .info__hours p:first-of-type span {
@@ -928,7 +936,7 @@ footer {
   background: #2e2e2e;
 }
 
-.footer__wrapper h3,
+.footer__wrapper h2,
 .footer__wrapper h4 {
   margin: 0 0 20px 0;
   line-height: 24px;
@@ -937,9 +945,9 @@ footer {
   text-transform: uppercase;
 }
 
-.footer__wrapper h3 {
+.footer__wrapper h2 {
   color: #64a604;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 
 .footer__wrapper h4 {
@@ -995,7 +1003,8 @@ footer {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 33%;
           flex: 1 0 33%;
-  padding: 0 50px;
+  padding-right: 90px;
+  padding-left: 50px;
 }
 
 .footer__about p,
