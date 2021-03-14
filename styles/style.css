@@ -1190,6 +1190,9 @@ footer {
   .testimonials {
     width: 70%;
   }
+  .image2 {
+    right: 100px;
+  }
   .post h4 {
     font-size: 0.8rem;
   }
@@ -1227,6 +1230,9 @@ footer {
   .nav__link a {
     font-size: 0.85rem;
   }
+  .image2 {
+    right: 30px;
+  }
   .blog__wrapper {
     padding: 70px 30px;
   }
@@ -1244,7 +1250,8 @@ footer {
   }
 }
 
-@media (max-width: 985px) {
+/* Portrait tablet and small desktops */
+@media (max-width: 940px) {
   .home,
   .blog,
   .contact {
@@ -1256,15 +1263,27 @@ footer {
   .button__hamburger {
     visibility: visible;
   }
+  .image2 {
+    right: -40px;
+  }
   .info__content {
     max-width: 100%;
     padding: 40px 30px;
   }
 }
 
-@media (max-width: 734px) {
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
   .header__wrapper h1 {
     font-size: 1.5rem;
+  }
+  .restaurant__info {
+    padding: 120px 0 100px 0;
+  }
+  .image2 {
+    top: -18%;
+    right: -60px;
+    width: 40%;
   }
   .testimonials {
     width: 50%;
@@ -1287,6 +1306,9 @@ footer {
         -ms-flex-align: center;
             align-items: center;
   }
+  .post div:nth-child(2) {
+    padding: 0;
+  }
   .author__bio {
     margin-top: 20px;
   }
@@ -1302,7 +1324,7 @@ footer {
   .form__wrapper {
     -ms-grid-column-align: center;
         justify-self: center;
-    padding: 50px 30px 0 30px;
+    padding: 40px 0 20px 0;
   }
   .form__wrapper input,
   .form__wrapper textarea {
@@ -1316,22 +1338,65 @@ footer {
   }
 }
 
+/* Landscape phones and down */
 @media (max-width: 480px) {
+  .home__wrapper,
+  .recipes__wrapper,
+  .blog__wrapper,
+  .footer__wrapper {
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .home__wrapper h2 {
+    font-size: 1rem;
+  }
+  .image2 {
+    top: -9%;
+    right: -40px;
+  }
   .menu__text {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
   }
+  .recipes__text,
+  .menu__text {
+    padding: 70px 30px;
+  }
+  .home__wrapper h2::after,
+  .testimonials h4::after {
+    content: "";
+    background: #64a604;
+    position: absolute;
+    top: 60%;
+    left: 38%;
+    height: 3px;
+    width: 50px;
+  }
+  .angle--left {
+    left: 35%;
+  }
+  .angle--right {
+    right: 38%;
+  }
+  .blog__content h2 {
+    font-size: 1.2rem;
+  }
   .menu__category p,
   .recipes__text p,
   .info__text p,
   .testimonials p,
+  .testimonials h4,
   .blog__wrapper p,
   .blog__wrapper a,
   .comment__form input,
   .comment__form textarea {
     font-size: 16px;
+  }
+  p.blog__date {
+    font-size: 14px;
   }
   .post,
   .comment {
