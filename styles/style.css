@@ -914,7 +914,7 @@ p.blog__date {
 
 .info__content {
   max-width: 65%;
-  padding: 90px 30px 10px 30px;
+  padding: 90px 30px 30px 30px;
 }
 
 .info__address,
@@ -1203,7 +1203,6 @@ footer {
   }
   .info__content {
     max-width: 75%;
-    padding: 90px 30px 30px 30px;
   }
   .footer__about {
     padding-left: 30px;
@@ -1266,6 +1265,9 @@ footer {
   .image2 {
     right: -40px;
   }
+  .form__wrapper {
+    padding: 40px 0;
+  }
   .info__content {
     max-width: 100%;
     padding: 40px 30px;
@@ -1306,9 +1308,6 @@ footer {
         -ms-flex-align: center;
             align-items: center;
   }
-  .post div:nth-child(2) {
-    padding: 0;
-  }
   .author__bio {
     margin-top: 20px;
   }
@@ -1324,7 +1323,6 @@ footer {
   .form__wrapper {
     -ms-grid-column-align: center;
         justify-self: center;
-    padding: 40px 0 20px 0;
   }
   .form__wrapper input,
   .form__wrapper textarea {
@@ -1404,6 +1402,9 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-flow: column wrap;
             flex-flow: column wrap;
+  }
+  .post div:nth-child(2) {
+    padding: 0;
   }
   .social__form input {
     width: 80%;

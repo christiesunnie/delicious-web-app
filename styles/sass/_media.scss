@@ -61,7 +61,6 @@
 
     .info__content {
         max-width: 75%;
-        padding: 90px 30px 30px 30px;
     }
 
     // Footer styles
@@ -144,6 +143,9 @@
     }
 
     // Contact page style
+    .form__wrapper {
+        padding: 40px 0;
+    }
     .info__content {
         max-width: 100%;
         padding: 40px 30px;
@@ -190,10 +192,6 @@
         align-items: center;
     }
 
-    .post div:nth-child(2) {
-        padding: 0;
-    }
-
     .author__bio {
         margin-top: 20px;
     }
@@ -209,7 +207,6 @@
 
     .form__wrapper {
         justify-self: center;
-        padding: 40px 0 20px 0;
     }
 
     .form__wrapper input,
@@ -294,6 +291,10 @@
     .post,
     .comment {
         flex-flow: column wrap;
+    }
+
+    .post div:nth-child(2) {
+        padding: 0;
     }
 
     // Footer style
