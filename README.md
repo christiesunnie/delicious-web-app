@@ -5,18 +5,18 @@
 
 2. SASS (SCSS)
 Our project will be organized with the following SASS files:
-  <ul>
-  <li>style.scss</li>
-  <li>_header.scss</li>
-  <li>_home.scss</li>
-  <li>_contact.scss</li>
-  <li>_blog.scss</li>
-  <li>_footer.scss</li>
-  <li>_media.scss</li>
-  <li>_setup.scss</li>
-  <li>_variables.scss</li>
-  <li>_mixins.scss</li>
-  </ul>
+   <ul>
+   <li>style.scss</li>
+   <li>_header.scss</li>
+   <li>_home.scss</li>
+   <li>_contact.scss</li>
+   <li>_blog.scss</li>
+   <li>_footer.scss</li>
+   <li>_media.scss</li>
+   <li>_setup.scss</li>
+   <li>_variables.scss</li>
+   <li>_mixins.scss</li>
+   </ul>
 
 3. Formating
  <ul>
@@ -53,13 +53,10 @@ Our project will be organized with the following SASS files:
    Use at least these three breakpoints:
 
 <p>/* Portrait tablet and small desktops */ </p> 
-@media (max-width: 940px) {
-}
-
+<p>@media (max-width: 940px) {}</p>
+--------------------------------------------------------
 <p>/* Landscape phone to portrait tablet  */ </p> 
-@media (max-width: 768px) {
-}
-
-<p>/* Landscape phones and down */ </p> 
-@media (max-width: 480px) {
-/
+<p>@media (max-width: 768px) {}</p>
+--------------------------------------------------------
+<p>/* Landscape phones and down */ </p>
+<p>@media (max-width: 480px) {}</p>
