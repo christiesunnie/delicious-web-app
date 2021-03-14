@@ -6,28 +6,30 @@ BEM will be used for HTML, CSS, and SCSS:
 
 Example:
 
-<!--
+<p></p>
 <div class="gallery">
 	<h1 class="gallery__title">Gallery</h1>
 	<img class="gallery__image gallery__image--large"/>
 	<img class="gallery__image" />
 	<img class="gallery__image" />
 </div> -->
-
+</p>
 2.SASS (SCSS)
 
 Our project will be organized with the following SASS files:
 
-style.scss
-\_header.scss
-\_home.scss
-\_contact.scss
-\_blog.scss
-\_footer.scss
-\_media.scss
-\_setup.scss
-\_variables.scss
-\_mixins.scss
+<ul>
+<li>style.scss</li>
+<li>_header.scss</li>
+<li>_home.scss</li>
+<li>_contact.scss</li>
+<li>_blog.scss</li>
+<li>_footer.scss</li>
+<li>_media.scss</li>
+<li>_setup.scss</li>
+<li>_variables.scss</li>
+<li>_mixins.scss</li>
+</ul>
 
 3.Formating
 Single tab (4 spaces) for indentation
