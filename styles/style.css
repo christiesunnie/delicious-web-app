@@ -286,19 +286,19 @@ template {
 
 .home {
   background: url(../assets/home/home_1.jpeg) center bottom no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   height: 100vh;
 }
 
 .blog {
   background: url(../assets/blog/blog_1.jpeg) center bottom no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   height: 60vh;
 }
 
 .contact {
   background: url(../assets/contact/contact_1.jpeg) center bottom no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   height: 70vh;
 }
 
@@ -335,6 +335,10 @@ template {
 .header__wrapper a:active,
 .header__wrapper a:focus {
   color: #64a604;
+}
+
+.header_nav {
+  position: relative;
 }
 
 .nav__list {
@@ -374,6 +378,12 @@ template {
 }
 
 .button__hamburger {
+  background: transparent;
+  border-style: none;
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 20px;
   visibility: hidden;
 }
 
@@ -461,7 +471,8 @@ template {
 }
 
 .recipes__image img,
-.restaurant__images img {
+.restaurant__images img,
+.image2 {
   display: block;
 }
 
@@ -488,9 +499,7 @@ template {
           column-gap: 5px;
 }
 
-.recipes__text p,
-.menu__category p,
-.info__text p {
+.menu__category p {
   color: #474747;
   font-size: 14px;
   line-height: 24px;
@@ -541,8 +550,8 @@ template {
 
 .image2 {
   position: absolute;
-  right: 100px;
-  top: -80px;
+  top: -22%;
+  right: 5%;
 }
 
 .restaurant__images {
@@ -597,7 +606,7 @@ template {
 
 .angle--left,
 .angle--right {
-  bottom: -40%;
+  bottom: -70px;
   font-size: 1.5rem;
   position: absolute;
 }
@@ -905,7 +914,7 @@ p.blog__date {
 
 .info__content {
   max-width: 65%;
-  padding: 90px 0 10px 30px;
+  padding: 90px 30px 10px 30px;
 }
 
 .info__address,
@@ -962,8 +971,12 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   font-family: "Lora", serif;
-  padding: 70px 0;
+  padding: 70px 0 40px 0;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1053,7 +1066,7 @@ footer {
   background: #535353;
   border: 1px solid transparent;
   padding: 10px 12px;
-  width: 85%;
+  width: 86%;
   color: #cccccc;
   font-size: 0.7rem;
   line-height: 0;
@@ -1173,6 +1186,10 @@ footer {
     height: 3px;
     width: 50px;
   }
+  .restaurant__info,
+  .testimonials {
+    width: 70%;
+  }
   .post h4 {
     font-size: 0.8rem;
   }
@@ -1183,7 +1200,7 @@ footer {
   }
   .info__content {
     max-width: 75%;
-    padding: 90px 0 10px 30px;
+    padding: 90px 30px 10px 30px;
   }
   .footer__about {
     padding-left: 30px;
@@ -1200,5 +1217,130 @@ footer {
   .copyright p {
     padding: 0 30px;
     width: 95%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .header__wrapper h1 {
+    font-size: 2rem;
+  }
+  .nav__link a {
+    font-size: 0.85rem;
+  }
+  .blog__wrapper {
+    padding: 70px 30px;
+  }
+  .footer__about {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+  }
+  .footer__blog,
+  .footer__social {
+    padding-top: 30px;
+  }
+  .footer__wrapper h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 985px) {
+  .home,
+  .blog,
+  .contact {
+    background-size: cover;
+  }
+  .nav__list {
+    visibility: hidden;
+  }
+  .button__hamburger {
+    visibility: visible;
+  }
+  .info__content {
+    max-width: 100%;
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 734px) {
+  .header__wrapper h1 {
+    font-size: 1.5rem;
+  }
+  .testimonials {
+    width: 50%;
+  }
+  .restaurant__testimonials {
+    padding: 100px 0 150px 0;
+  }
+  .angle--left {
+    left: 41%;
+  }
+  .angle--right {
+    right: 43%;
+  }
+  .author__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .author__bio {
+    margin-top: 20px;
+  }
+  .comment__form,
+  .contact__form,
+  .form__wrapper form {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    padding-left: 0px;
+  }
+  .form__wrapper {
+    -ms-grid-column-align: center;
+        justify-self: center;
+    padding: 50px 30px 0 30px;
+  }
+  .form__wrapper input,
+  .form__wrapper textarea {
+    width: 90vw;
+  }
+  .footer__blog {
+    display: none;
+  }
+  .social__form input {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu__text {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
+  .menu__category p,
+  .recipes__text p,
+  .info__text p,
+  .testimonials p,
+  .blog__wrapper p,
+  .blog__wrapper a,
+  .comment__form input,
+  .comment__form textarea {
+    font-size: 16px;
+  }
+  .post,
+  .comment {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+  }
+  .social__form input {
+    width: 80%;
   }
 }

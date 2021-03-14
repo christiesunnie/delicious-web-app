@@ -55,7 +55,8 @@
 }
 
 .recipes__image img,
-.restaurant__images img {
+.restaurant__images img,
+.image2 {
     display: block;
 }
 
@@ -72,9 +73,7 @@
     column-gap: 5px;
 }
 
-.recipes__text p,
-.menu__category p,
-.info__text p {
+.menu__category p {
     @include font__style($primary4, 14px, $line__height1, $letter__spacing1);
 }
 
@@ -113,8 +112,8 @@
 
 .image2 {
     position: absolute;
-    right: 100px;
-    top: -80px;
+    top: -22%;
+    right: 5%;
 }
 
 .restaurant__images {
@@ -161,7 +160,7 @@
 
 .angle--left,
 .angle--right {
-    bottom: -40%;
+    bottom: -70px;
     font-size: 1.5rem;
     position: absolute;
 }

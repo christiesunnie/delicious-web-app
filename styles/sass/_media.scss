@@ -39,6 +39,11 @@
         @include underline(60%, 47%);
     }
 
+    .restaurant__info,
+    .testimonials {
+        width: 70%;
+    }
+
     // Blog page style
     .post h4 {
         font-size: 0.8rem;
@@ -52,7 +57,7 @@
 
     .info__content {
         max-width: 75%;
-        padding: 90px 0 10px 30px;
+        padding: 90px 30px 10px 30px;
     }
 
     // Footer styles
@@ -74,5 +79,150 @@
     .copyright p {
         padding: 0 30px;
         width: 95%;
+    }
+}
+
+@media (max-width: 1100px) {
+    // Header styles
+    .header__wrapper h1 {
+        font-size: 2rem;
+    }
+
+    .nav__link a {
+        font-size: 0.85rem;
+    }
+
+    // Blog page style
+    .blog__wrapper {
+        padding: 70px 30px;
+    }
+
+    // Footer styles
+    .footer__about {
+        flex: 1 1 auto;
+    }
+
+    .footer__blog,
+    .footer__social {
+        padding-top: 30px;
+    }
+
+    .footer__wrapper h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 985px) {
+    // Header styles
+    .home,
+    .blog,
+    .contact {
+        background-size: cover;
+    }
+
+    .nav__list {
+        visibility: hidden;
+    }
+
+    .button__hamburger {
+        visibility: visible;
+    }
+
+    // Contact page style
+    .info__content {
+        max-width: 100%;
+        padding: 40px 30px;
+    }
+}
+
+@media (max-width: 734px) {
+    // Header style
+    .header__wrapper h1 {
+        font-size: 1.5rem;
+    }
+
+    // Home page style
+    .testimonials {
+        width: 50%;
+    }
+
+    .restaurant__testimonials {
+        padding: 100px 0 150px 0;
+    }
+
+    .angle--left {
+        left: 41%;
+    }
+
+    .angle--right {
+        right: 43%;
+    }
+
+    // Blog page styles
+    .author__container {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+
+    .author__bio {
+        margin-top: 20px;
+    }
+
+    // Contact page styles
+    .comment__form,
+    .contact__form,
+    .form__wrapper form {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding-left: 0px;
+    }
+
+    .form__wrapper {
+        justify-self: center;
+        padding: 50px 30px 0 30px;
+    }
+
+    .form__wrapper input,
+    .form__wrapper textarea {
+        width: 90vw;
+    }
+
+    // Footer styles
+    .footer__blog {
+        display: none;
+    }
+
+    .social__form input {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    // Home page styles
+    .menu__text {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    // Blog page style
+    .menu__category p,
+    .recipes__text p,
+    .info__text p,
+    .testimonials p,
+    .blog__wrapper p,
+    .blog__wrapper a,
+    .comment__form input,
+    .comment__form textarea {
+        font-size: 16px;
+    }
+
+    .post,
+    .comment {
+        flex-flow: column wrap;
+    }
+
+    // Footer style
+    .social__form input {
+        width: 80%;
     }
 }
