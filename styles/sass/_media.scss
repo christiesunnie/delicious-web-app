@@ -170,6 +170,11 @@
         width: 40%;
     }
 
+    .menu__text {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
     .testimonials {
         width: 50%;
     }
@@ -242,11 +247,6 @@
     .image2 {
         top: -9%;
         right: -40px;
-    }
-
-    .menu__text {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
     }
 
     .recipes__text,

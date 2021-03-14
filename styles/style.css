@@ -1287,6 +1287,12 @@ footer {
     right: -60px;
     width: 40%;
   }
+  .menu__text {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+  }
   .testimonials {
     width: 50%;
   }
@@ -1352,12 +1358,6 @@ footer {
   .image2 {
     top: -9%;
     right: -40px;
-  }
-  .menu__text {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: auto;
-        grid-template-rows: auto;
   }
   .recipes__text,
   .menu__text {
