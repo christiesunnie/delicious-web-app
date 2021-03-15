@@ -1,3 +1,4 @@
+// Setup snippet styles
 html {
     line-height: 1.15;
     -ms-text-size-adjust: 100%;
@@ -253,6 +254,7 @@ template {
     box-sizing: border-box;
 }
 
+// Accessibility styles
 .visuallyHidden:not(:focus):not(:active) {
     position: absolute;
     width: 1px;

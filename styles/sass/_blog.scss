@@ -1,10 +1,10 @@
-// Main blog wrapper style
+// Blog wrapper style
 .blog__wrapper {
     padding: 70px 50px 150px 50px;
     @include wrapper;
 }
 
-// Blog heading title styles
+// Blog typography styles
 .blog__wrapper h2,
 .blog__wrapper h4,
 .button__comment {
@@ -37,7 +37,7 @@ p.blog__date {
     font-size: 16px;
 }
 
-// Blog divider sections style
+// Blog sections style
 .blog__content,
 .blog__social,
 .author__container,
@@ -133,7 +133,7 @@ p.blog__date {
     font-size: 1rem;
 }
 
-// Blog form section sty;e
+// Blog form section style
 .blog__form p:nth-child(2) {
     font-style: italic;
 }
@@ -157,6 +157,7 @@ p.blog__date {
     width: 100%;
 }
 
+// Blog button styles
 .button__comment {
     margin: 20px auto;
     @include button(15px, 20px);

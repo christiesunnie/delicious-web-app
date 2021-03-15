@@ -1,7 +1,24 @@
+// Footer wrapper style
 footer {
     background: $primary5;
 }
 
+.footer__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    font-family: $font__family1;
+    padding: 70px 0 40px 0;
+    justify-content: space-between;
+    @include font__style(
+        lighten($primary1, 20%),
+        0.7rem,
+        $line__height3,
+        $letter__spacing1
+    );
+    @include wrapper;
+}
+
+// Footer typography styles
 .footer__wrapper h2,
 .footer__wrapper h4 {
     margin: 0 0 20px 0;
@@ -20,27 +37,13 @@ footer {
     font-size: 0.9rem;
 }
 
-.footer__wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    font-family: $font__family1;
-    padding: 70px 0 40px 0;
-    justify-content: space-between;
-    @include font__style(
-        lighten($primary1, 20%),
-        0.7rem,
-        $line__height3,
-        $letter__spacing1
-    );
-    @include wrapper;
-}
-
 .footer__wrapper a,
 .copyright,
 .social__form input::placeholder {
     color: lighten($primary1, 20%);
 }
 
+// Footer sections layout styles
 .footer__about,
 .footer__blog,
 .footer__social {
@@ -84,6 +87,7 @@ footer {
     border-top: 0;
 }
 
+// Footer form styles
 .social__form {
     font-size: 0;
 }
@@ -100,6 +104,7 @@ footer {
     font-family: $font__family1;
 }
 
+// Footer button styles
 .button__submit {
     @include button(10px, 12px);
 }
@@ -109,6 +114,7 @@ footer {
     @include button__cursor;
 }
 
+// Footer social media styles
 .social__list {
     display: flex;
 }
@@ -127,6 +133,7 @@ footer {
     color: $secondary1;
 }
 
+// Footer copyright styles
 .copyright {
     background: $primary8;
     padding: 20px 0;

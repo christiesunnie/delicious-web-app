@@ -1,4 +1,4 @@
-// Form contact section
+// Contact wrapper styles
 .contact__form {
     display: grid;
     column-gap: 40px;
@@ -11,7 +11,7 @@
     padding: 90px 0;
 }
 
-// Heading styles
+// Contact typography styles
 .contact__wrapper h2,
 .contact__wrapper h4,
 .info__hours p:first-of-type span,
@@ -42,7 +42,7 @@
     @include font__style($primary4, 14px, $line__height1, $letter__spacing1);
 }
 
-// Form styles
+// Contact form styles
 .form__wrapper form {
     gap: 25px;
     @include grid23;

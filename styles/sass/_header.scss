@@ -1,3 +1,4 @@
+// Header background images styles
 .home {
     @include background__image(url(../assets/home/home_1.jpeg), 100vh);
 }
@@ -10,12 +11,14 @@
     @include background__image(url(../assets/contact/contact_1.jpeg), 70vh);
 }
 
+// Header wrapper style
 .header__wrapper {
     display: flex;
     justify-content: space-between;
     @include wrapper(95%);
 }
 
+// Header navigation styles
 .header__wrapper h1,
 .nav__list {
     @include text__uppercase;
@@ -73,6 +76,7 @@
     right: -7px;
 }
 
+// Header hamburger menu style
 .button__hamburger {
     background: transparent;
     border-style: none;
