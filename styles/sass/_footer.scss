@@ -96,7 +96,7 @@ footer {
     background: $primary7;
     border: 1px solid transparent;
     padding: 10px 12px;
-    width: 86%;
+    width: 85%;
     @include font__style(lighten($primary1, 20%), 0.7rem, 0, $letter__spacing1);
 }
 
