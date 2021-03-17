@@ -387,6 +387,12 @@ template {
   visibility: hidden;
 }
 
+.home__wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+  width: 100%;
+}
+
 .home__wrapper h2,
 .home__wrapper h4 {
   margin: 0;
@@ -722,9 +728,9 @@ p.blog__date {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 30px 0;
 }
 
@@ -948,25 +954,6 @@ footer {
   background: #2e2e2e;
 }
 
-.footer__wrapper h2,
-.footer__wrapper h4 {
-  margin: 0 0 20px 0;
-  line-height: 24px;
-  letter-spacing: 0.5px;
-  font-family: "Raleway", sans-serif;
-  text-transform: uppercase;
-}
-
-.footer__wrapper h2 {
-  color: #64a604;
-  font-size: 1.7rem;
-}
-
-.footer__wrapper h4 {
-  color: #f6f6f6;
-  font-size: 0.9rem;
-}
-
 .footer__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -987,6 +974,25 @@ footer {
   max-width: 1500px;
   margin: 0 auto;
   width: 85%;
+}
+
+.footer__wrapper h2,
+.footer__wrapper h4 {
+  margin: 0 0 20px 0;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+}
+
+.footer__wrapper h2 {
+  color: #64a604;
+  font-size: 1.7rem;
+}
+
+.footer__wrapper h4 {
+  color: #f6f6f6;
+  font-size: 0.9rem;
 }
 
 .footer__wrapper a,
@@ -1066,7 +1072,7 @@ footer {
   background: #535353;
   border: 1px solid transparent;
   padding: 10px 12px;
-  width: 86%;
+  width: 85%;
   color: #cccccc;
   font-size: 0.7rem;
   line-height: 0;
