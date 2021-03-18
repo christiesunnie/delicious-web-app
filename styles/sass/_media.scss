@@ -122,7 +122,7 @@
 }
 
 /* Portrait tablet and small desktops */
-@media (max-width: 940px) {
+@media (max-width: 972px) {
     // Header styles
     .home,
     .blog,
@@ -130,8 +130,17 @@
         background-size: cover;
     }
 
+    .header__wrapper {
+        flex-flow: column wrap;
+    }
+
     .nav__list {
+        flex-flow: column wrap;
         visibility: hidden;
+    }
+
+    .nav__link {
+        padding: 10px 0;
     }
 
     .button__hamburger {
