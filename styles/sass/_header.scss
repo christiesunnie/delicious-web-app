@@ -39,7 +39,8 @@
     color: $secondary1;
 }
 
-.nav__list {
+.nav__list,
+.nav__search {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,11 +82,7 @@
     font-size: 2rem;
     position: absolute;
     top: 20px;
-    right: 0;
+    right: 20px;
     cursor: pointer;
     visibility: hidden;
-}
-
-.button__hamburger:hover {
-    transform: rotate(90deg);
 }

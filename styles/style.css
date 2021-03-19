@@ -338,7 +338,8 @@ template {
   color: #64a604;
 }
 
-.nav__list {
+.nav__list,
+.nav__search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -385,14 +386,9 @@ template {
   font-size: 2rem;
   position: absolute;
   top: 20px;
-  right: 0;
+  right: 20px;
   cursor: pointer;
   visibility: hidden;
-}
-
-.button__hamburger:hover {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
 }
 
 .home__wrapper {
@@ -1275,8 +1271,23 @@ footer {
     -webkit-box-direction: normal;
         -ms-flex-flow: column wrap;
             flex-flow: column wrap;
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .header__nav,
+  .nav__list {
+    background: #f6f6f6;
+    opacity: 0.9;
+  }
+  .header__nav {
+    padding: 0 20px;
+  }
+  .nav__link a {
+    font-size: 1rem;
   }
   .nav__list {
+    margin-top: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-flow: column wrap;
@@ -1284,10 +1295,29 @@ footer {
     visibility: hidden;
   }
   .nav__link {
-    padding: 10px 0;
+    padding: 15px 0;
   }
+  .nav__search {
+    position: absolute;
+    top: -5px;
+    right: 80px;
+  }
+  .nav__search a {
+    font-size: 1.2rem;
+  }
+  .show__links,
   .button__hamburger {
     visibility: visible;
+  }
+  .button__rotate {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .nav__link.cart::before {
+    bottom: 13px;
+  }
+  .nav__link.cart::after {
+    bottom: 15px;
   }
   .image2 {
     right: -40px;
@@ -1303,8 +1333,12 @@ footer {
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
-  .header__wrapper h1 {
+  .header__wrapper h1,
+  .button__hamburger {
     font-size: 1.5rem;
+  }
+  .nav__search {
+    top: -10px;
   }
   .restaurant__info {
     padding: 120px 0 100px 0;
@@ -1378,6 +1412,21 @@ footer {
     max-width: 1500px;
     margin: 0 auto;
     width: 100%;
+  }
+  .nav__list {
+    margin-bottom: 0;
+  }
+  .nav__search {
+    background: #f6f6f6;
+    opacity: 0.9;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 0;
+    visibility: hidden;
+  }
+  .show__links {
+    visibility: visible;
   }
   .home__wrapper h2 {
     font-size: 1rem;

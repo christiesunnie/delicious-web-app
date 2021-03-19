@@ -132,19 +132,58 @@
 
     .header__wrapper {
         flex-flow: column wrap;
+        @include wrapper(100%);
+    }
+
+    .header__nav,
+    .nav__list {
+        background: $primary2;
+        opacity: 0.9;
+    }
+
+    .header__nav {
+        padding: 0 20px;
+    }
+
+    .nav__link a {
+        font-size: 1rem;
     }
 
     .nav__list {
+        margin-top: 0;
         flex-flow: column wrap;
         visibility: hidden;
     }
 
     .nav__link {
-        padding: 10px 0;
+        padding: 15px 0;
     }
 
+    .nav__search {
+        position: absolute;
+        top: -5px;
+        right: 80px;
+    }
+
+    .nav__search a {
+        font-size: 1.2rem;
+    }
+
+    .show__links,
     .button__hamburger {
         visibility: visible;
+    }
+
+    .button__rotate {
+        transform: rotate(90deg);
+    }
+
+    .nav__link.cart::before {
+        bottom: 13px;
+    }
+
+    .nav__link.cart::after {
+        bottom: 15px;
     }
 
     // Home page style
@@ -165,8 +204,13 @@
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
     // Header style
-    .header__wrapper h1 {
+    .header__wrapper h1,
+    .button__hamburger {
         font-size: 1.5rem;
+    }
+
+    .nav__search {
+        top: -10px;
     }
 
     // Home page style
@@ -247,6 +291,25 @@
     .blog__wrapper,
     .footer__wrapper {
         @include wrapper(100%);
+    }
+
+    // Header styles
+    .nav__list {
+        margin-bottom: 0;
+    }
+
+    .nav__search {
+        background: $primary2;
+        opacity: 0.9;
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 0;
+        visibility: hidden;
+    }
+
+    .show__links {
+        visibility: visible;
     }
 
     // Home page styles
