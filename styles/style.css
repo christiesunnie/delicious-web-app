@@ -616,20 +616,59 @@ template {
 
 .angle--left,
 .angle--right {
-  bottom: -70px;
-  font-size: 1.5rem;
   position: absolute;
+  bottom: 60px;
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 1.5rem;
+  color: #fff;
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+  cursor: pointer;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
 }
 
 .angle--left {
-  color: #eef6d1;
-  left: 45%;
+  left: 40%;
 }
 
 .angle--right {
-  color: #fff;
-  font-weight: bold;
-  right: 46%;
+  right: 40%;
+}
+
+.angle--left:hover,
+.angle--right:hover {
+  border: 1px solid #000000;
+  border-radius: 5px;
 }
 
 .blog__wrapper {
@@ -1360,12 +1399,6 @@ footer {
   .restaurant__testimonials {
     padding: 100px 0 150px 0;
   }
-  .angle--left {
-    left: 41%;
-  }
-  .angle--right {
-    right: 43%;
-  }
   .author__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1453,7 +1486,7 @@ footer {
     left: 35%;
   }
   .angle--right {
-    right: 38%;
+    right: 35%;
   }
   .blog__content h2 {
     font-size: 1.2rem;
