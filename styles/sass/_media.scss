@@ -214,6 +214,12 @@
     }
 
     // Home page style
+    .home__wrapper h2::after,
+    .info__text h2::after,
+    .testimonials h4::after {
+        @include underline(60%, 45%);
+    }
+
     .restaurant__info {
         padding: 120px 0 100px 0;
     }
@@ -319,7 +325,6 @@
         padding: 70px 30px;
     }
 
-    .home__wrapper h2::after,
     .testimonials h4::after {
         @include underline(60%, 38%);
     }

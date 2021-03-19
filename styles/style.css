@@ -658,7 +658,7 @@ template {
 }
 
 .angle--left {
-  left: 40%;
+  left: 44%;
 }
 
 .angle--right {
@@ -1379,6 +1379,17 @@ footer {
   .nav__search {
     top: -10px;
   }
+  .home__wrapper h2::after,
+  .info__text h2::after,
+  .testimonials h4::after {
+    content: "";
+    background: #64a604;
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    height: 3px;
+    width: 50px;
+  }
   .restaurant__info {
     padding: 120px 0 100px 0;
   }
@@ -1472,7 +1483,6 @@ footer {
   .menu__text {
     padding: 70px 30px;
   }
-  .home__wrapper h2::after,
   .testimonials h4::after {
     content: "";
     background: #64a604;
