@@ -96,6 +96,10 @@
         font-size: 0.85rem;
     }
 
+    .nav__search a {
+        font-size: 1.5rem;
+    }
+
     // Home page style
     .image2 {
         right: 30px;
@@ -145,7 +149,7 @@
         padding: 0 20px;
     }
 
-    .nav__link a {
+    .nav__list a {
         font-size: 1rem;
     }
 
@@ -165,8 +169,8 @@
         right: 80px;
     }
 
-    .nav__search a {
-        font-size: 1.2rem;
+    .cart__quantity {
+        bottom: 5px;
     }
 
     .show__links,

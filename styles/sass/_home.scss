@@ -81,6 +81,34 @@
     column-gap: 5px;
 }
 
+.menu__category {
+    position: relative;
+}
+
+.minus__circle,
+.plus__circle {
+    background: transparent;
+    border: 1px solid transparent;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+
+.minus__circle {
+    right: 50px;
+}
+
+.plus__circle {
+    right: 10px;
+}
+
+.minus__circle:hover,
+.plus__circle:hover,
+.minus__circle:focus,
+.plus__circle:focus {
+    color: $secondary1;
+}
+
 .menu__category p {
     @include font__style($primary4, 14px, $line__height1, $letter__spacing1);
 }
@@ -201,7 +229,8 @@
 }
 
 .angle--left:hover,
-.angle--right:hover {
-    border: 1px solid $primary9;
+.angle--right:hover,
+.angle--left:focus,
+.angle--right:focus {
     border-radius: 5px;
 }

@@ -25,14 +25,23 @@ const testimonials = [
 
 ///////////////////////////////////////////////////////////////
 //////////////////////Variables///////////////////////////////
+// Header DOM elements
 const hamburger = document.querySelector(".button__hamburger");
 const navList = document.querySelector(".nav__list");
 const navSearch = document.querySelector(".nav__search");
+const cartQuantity = document.querySelector(".cart__quantity");
+
+// Tesimonials section DOM elements
 const testimonialContainer = document.querySelector(".testimonials");
 const testimonialClient = document.querySelector(".testimonial__client");
 const testimonialText = document.querySelector(".testimonial__text");
 const prevButton = document.querySelector(".angle--left");
 const nextButton = document.querySelector(".angle--right");
+
+// Homepage menu section DOM elements
+const menuContainer = document.querySelector(".menu__text");
+const minusButton = document.querySelector(".minus__circle");
+const plusButton = document.querySelector(".plus__circle");
 
 // Set the index of the current item in the testimonial array
 let currentTestimonial = 0;
@@ -99,4 +108,33 @@ nextButton.addEventListener("click", function () {
     }
     // Print the data of the testimonial array on the page
     testimonialsFunc(currentTestimonial);
+});
+
+// Adding the quantity of the order into the shopping cart event
+menuContainer.addEventListener("click", function (e) {
+    // Check if the target event is the minus button
+    if (
+        e.target.classList[0] === "minus__circle" ||
+        e.target.classList[1] === "fa-minus-circle"
+    ) {
+        +cartQuantity.textContent--;
+        // Only show the cart quantity if there is the order quantity in the cart
+        if (cartQuantity.textContent !== "" && +cartQuantity.textContent > 0) {
+            cartQuantity.style.visibility = "visible";
+        } else {
+            // If there is no order, empty and hide  the cart
+            cartQuantity.style.visibility = "hidden";
+            cartQuantity.textContent = "";
+        }
+    }
+
+    // Check if the target event is the plus button
+    if (
+        e.target.classList[0] === "plus__circle" ||
+        e.target.classList[1] === "fa-plus-circle"
+    ) {
+        // Show the cart and update the order quantity
+        cartQuantity.style.visibility = "visible";
+        +cartQuantity.textContent++;
+    }
 });
