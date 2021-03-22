@@ -909,13 +909,13 @@ p.blog__date {
 .contact__wrapper h2,
 .contact__wrapper h4,
 .info__hours p:first-of-type span,
-.button__send {
+.button__message {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
 }
 
-.button__send:hover,
-.button__send:focus {
+.button__message:hover,
+.button__message:focus {
   color: #000000;
   cursor: pointer;
 }
@@ -979,7 +979,7 @@ p.blog__date {
   width: 100%;
 }
 
-.button__send {
+.button__message {
   background: transparent;
   border: 1px solid transparent;
   color: #64a604;

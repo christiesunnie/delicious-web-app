@@ -43,6 +43,19 @@ const menuContainer = document.querySelector(".menu__text");
 const minusButton = document.querySelector(".minus__circle");
 const plusButton = document.querySelector(".plus__circle");
 
+// Form section on the blog page DOM elements
+const userNameBlog = document.getElementById("user__name__blog");
+const userEmailBlog = document.getElementById("user__email__blog");
+const commentBlog = document.getElementById("comment__blog");
+console.log(commentBlog);
+const buttonComment = document.querySelector(".button__comment");
+
+// Form section on the contact page DOM elements
+const userNameContact = document.getElementById("user__name__contact");
+const userEmailContact = document.getElementById("user__email__contact");
+const messageContact = document.getElementById("message__contact");
+const buttonMessage = document.querySelector(".button__message");
+
 // Set the index of the current item in the testimonial array
 let currentTestimonial = 0;
 
