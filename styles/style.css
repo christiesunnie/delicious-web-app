@@ -1218,6 +1218,50 @@ footer {
   text-transform: uppercase;
 }
 
+.blog__wrapper {
+  position: relative;
+}
+
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 51px;
+  left: 51px;
+  bottom: 240px;
+  height: 450px;
+  padding: 0 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  background: #999999;
+  color: #000000;
+  opacity: 0.96;
+  visibility: hidden;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+  color: #f6f6f6;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
 @media (max-width: 1432px) {
   .recipes__wrapper,
   .blog__wrapper,
@@ -1312,6 +1356,11 @@ footer {
   }
   .blog__wrapper {
     padding: 70px 30px;
+  }
+  .modal {
+    right: 30px;
+    left: 30px;
+    bottom: 150px;
   }
   .footer__about {
     -webkit-box-flex: 1;
@@ -1451,6 +1500,9 @@ footer {
   .author__bio {
     margin-top: 20px;
   }
+  .modal {
+    height: 600px;
+  }
   .comment__form,
   .contact__form,
   .form__wrapper form {
@@ -1553,6 +1605,10 @@ footer {
   }
   .post div:nth-child(2) {
     padding: 0;
+  }
+  .modal__close {
+    right: 20px;
+    font-size: 1.5rem;
   }
   .social__form input {
     width: 80%;

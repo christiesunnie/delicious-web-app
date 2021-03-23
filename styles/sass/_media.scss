@@ -110,6 +110,12 @@
         padding: 70px 30px;
     }
 
+    .modal {
+        right: 30px;
+        left: 30px;
+        bottom: 150px;
+    }
+
     // Footer styles
     .footer__about {
         flex: 1 1 auto;
@@ -257,6 +263,10 @@
         margin-top: 20px;
     }
 
+    .modal {
+        height: 600px;
+    }
+
     // Contact page styles
     .comment__form,
     .contact__form,
@@ -369,6 +379,11 @@
 
     .post div:nth-child(2) {
         padding: 0;
+    }
+
+    .modal__close {
+        right: 20px;
+        font-size: 1.5rem;
     }
 
     // Footer style

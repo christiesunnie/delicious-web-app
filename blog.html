@@ -13,6 +13,7 @@
         />
         <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
         <script defer src="scripts/script.js"></script>
+        <script defer src="scripts/blog-script.js"></script>
     </head>
     <body>
         <!-- Header starts -->
@@ -312,12 +313,22 @@
                             id="comment__blog"
                             cols="30"
                             rows="10"
-                            placeholder="Comment"
+                            placeholder="Comment *"
                         ></textarea>
-                        <label class="visuallyHidden" for="comment__blog"></label>
+                        <label
+                            class="visuallyHidden"
+                            for="comment__blog"
+                        ></label>
                     </div>
                 </form>
                 <button class="button__comment">submit comment</button>
+                <!-- Modal display the error message -->
+                <div class="modal">
+                    <span class="modal__close" aria-label="Close button"
+                        ><i aria-hidden class="fas fa-times"></i
+                    ></span>
+                    <!-- Error message go in here -->
+                </div>
             </section>
         </main>
 
