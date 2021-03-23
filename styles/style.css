@@ -286,19 +286,19 @@ template {
 
 .home {
   background: url(../assets/home/home_1.jpeg) center bottom no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 100vh;
 }
 
 .blog {
   background: url(../assets/blog/blog_1.jpeg) center bottom no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 60vh;
 }
 
 .contact {
   background: url(../assets/contact/contact_1.jpeg) center bottom no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 70vh;
 }
 
@@ -558,6 +558,10 @@ template {
   letter-spacing: 0.3px;
 }
 
+.button__recipes a {
+  color: #f6f6f6;
+}
+
 .button__recipes {
   font-family: "Raleway", sans-serif;
   margin: 20px auto;
@@ -795,7 +799,7 @@ p.blog__date {
 .author__bio,
 .comment__text {
   background: #f6f6f6;
-  padding: 0 40px;
+  padding: 0 15px;
 }
 
 .blog__posts {
@@ -1420,11 +1424,6 @@ footer {
 
 /* Portrait tablet and small desktops */
 @media (max-width: 972px) {
-  .home,
-  .blog,
-  .contact {
-    background-size: cover;
-  }
   .header__wrapper {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1592,6 +1591,11 @@ footer {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  .home,
+  .blog,
+  .contact {
+    height: 55vh;
+  }
   .home__wrapper,
   .recipes__wrapper,
   .blog__wrapper,

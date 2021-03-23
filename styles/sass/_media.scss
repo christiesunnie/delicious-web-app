@@ -138,13 +138,6 @@
 
 /* Portrait tablet and small desktops */
 @media (max-width: 972px) {
-    // Header styles
-    .home,
-    .blog,
-    .contact {
-        background-size: cover;
-    }
-
     .header__wrapper {
         flex-flow: column wrap;
         @include wrapper(100%);
@@ -325,6 +318,13 @@
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+    // Header background images styles
+    .home,
+    .blog,
+    .contact {
+        height: 55vh;
+    }
+
     // Wrapper styles
     .home__wrapper,
     .recipes__wrapper,

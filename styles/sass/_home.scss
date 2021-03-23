@@ -118,6 +118,10 @@
     @include font__style($primary4, 0.9rem, $line__height1, $letter__spacing1);
 }
 
+.button__recipes a {
+    color: $primary2;
+}
+
 .button__recipes {
     font-family: $font__family2;
     margin: 20px auto;
