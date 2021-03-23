@@ -83,3 +83,13 @@
     cursor: pointer;
     visibility: hidden;
 }
+
+// Header modal style
+.order__list {
+    list-style-type: square;
+    text-transform: capitalize;
+}
+
+.order__list li {
+    padding: 10px 0;
+}

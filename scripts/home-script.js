@@ -25,6 +25,12 @@ const testimonials = [
 
 ///////////////////////////////////////////////////////////////
 //////////////////////Variables///////////////////////////////
+// Header section DOM elements
+const shoppingCart = document.querySelector(".cart");
+const modalContainer = document.querySelector(".header__modal");
+const modalClose = document.querySelector(".header__modal--close");
+const orderList = document.querySelector(".order__list");
+
 // Tesimonials section DOM elements
 const testimonialContainer = document.querySelector(".testimonials");
 const testimonialClient = document.querySelector(".testimonial__client");
@@ -50,6 +56,16 @@ const testimonialsFunc = function (person) {
     testimonialClient.textContent = item.client;
     // Print the text property on the page
     testimonialText.textContent = item.text;
+};
+
+// Function to create the new order
+const orderToDislay = function (item, quantity) {
+    const orderElement = document.createElement("li");
+    const orderItem = `
+    ${item}: <span class="order__quantity">${quantity}</span>
+    `;
+    orderElement.innerHTML = orderItem;
+    orderList.append(orderElement);
 };
 
 ////////////////////////////////////////////////////////////
@@ -94,12 +110,18 @@ nextButton.addEventListener("click", function () {
 
 // Adding the quantity of the order into the shopping cart event
 menuContainer.addEventListener("click", function (e) {
+    const targetElement = e.target;
+    // Get the name of the order's items
+    const orderName =
+        targetElement.parentElement.parentElement.children[0].textContent;
     // Check if the target event is the minus button
     if (
-        e.target.classList[0] === "minus__circle" ||
-        e.target.classList[1] === "fa-minus-circle"
+        targetElement.classList[0] === "minus__circle" ||
+        targetElement.classList[1] === "fa-minus-circle"
     ) {
         +cartQuantity.textContent--;
+        // Diplay the order list
+        orderToDislay(orderName, cartQuantity.textContent);
         // Only show the cart quantity if there is the order quantity in the cart
         if (cartQuantity.textContent !== "" && +cartQuantity.textContent > 0) {
             cartQuantity.style.visibility = "visible";
@@ -112,11 +134,23 @@ menuContainer.addEventListener("click", function (e) {
 
     // Check if the target event is the plus button
     if (
-        e.target.classList[0] === "plus__circle" ||
-        e.target.classList[1] === "fa-plus-circle"
+        targetElement.classList[0] === "plus__circle" ||
+        targetElement.classList[1] === "fa-plus-circle"
     ) {
         // Show the cart and update the order quantity
         cartQuantity.style.visibility = "visible";
         +cartQuantity.textContent++;
+        // Diplay the order list
+        orderToDislay(orderName, cartQuantity.textContent);
     }
+});
+
+// Shopping cart modal event
+shoppingCart.addEventListener("click", function () {
+    modalContainer.style.visibility = "visible";
+});
+
+// Close modal button event
+modalClose.addEventListener("click", function () {
+    modalContainer.style.visibility = "hidden";
 });
