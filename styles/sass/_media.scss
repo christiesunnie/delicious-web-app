@@ -110,10 +110,15 @@
         padding: 70px 30px;
     }
 
-    .modal {
+    .blog__modal {
         right: 30px;
         left: 30px;
         bottom: 150px;
+    }
+
+    // Contact page style
+    .contact__modal {
+        bottom: 215px;
     }
 
     // Footer styles
@@ -205,9 +210,27 @@
     .form__wrapper {
         padding: 40px 0;
     }
+
     .info__content {
         max-width: 100%;
         padding: 40px 30px;
+    }
+
+    .contact__modal {
+        bottom: 170px;
+        height: 480px;
+    }
+}
+
+@media (max-width: 876px) {
+    .contact__modal {
+        bottom: 245px;
+    }
+}
+
+@media (max-width: 780px) {
+    .contact__modal {
+        bottom: 260px;
     }
 }
 
@@ -263,7 +286,7 @@
         margin-top: 20px;
     }
 
-    .modal {
+    .blog__modal {
         height: 600px;
     }
 
@@ -283,6 +306,11 @@
     .form__wrapper input,
     .form__wrapper textarea {
         width: 90vw;
+    }
+
+    .contact__modal {
+        bottom: 150px;
+        height: 550px;
     }
 
     // Footer styles
@@ -381,7 +409,8 @@
         padding: 0;
     }
 
-    .modal__close {
+    .blog__modal--close,
+    .contact__modal--close {
         right: 20px;
         font-size: 1.5rem;
     }

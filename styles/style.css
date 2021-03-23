@@ -1222,7 +1222,7 @@ footer {
   position: relative;
 }
 
-.modal {
+.blog__modal {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1245,7 +1245,7 @@ footer {
   visibility: hidden;
 }
 
-.modal__close {
+.blog__modal--close {
   position: absolute;
   top: 20px;
   right: 40px;
@@ -1253,8 +1253,52 @@ footer {
   cursor: pointer;
 }
 
-.modal__close:hover,
-.modal__close:focus {
+.blog__modal--close:hover,
+.blog__modal--close:focus {
+  color: #f6f6f6;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.form__wrapper {
+  position: relative;
+}
+
+.contact__modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 200px;
+  height: 500px;
+  padding: 0 10px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 10px;
+  background: #999999;
+  color: #000000;
+  opacity: 0.96;
+  visibility: hidden;
+}
+
+.contact__modal--close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.contact__modal--close:hover,
+.contact__modal--close:focus {
   color: #f6f6f6;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -1357,10 +1401,13 @@ footer {
   .blog__wrapper {
     padding: 70px 30px;
   }
-  .modal {
+  .blog__modal {
     right: 30px;
     left: 30px;
     bottom: 150px;
+  }
+  .contact__modal {
+    bottom: 215px;
   }
   .footer__about {
     -webkit-box-flex: 1;
@@ -1446,6 +1493,22 @@ footer {
     max-width: 100%;
     padding: 40px 30px;
   }
+  .contact__modal {
+    bottom: 170px;
+    height: 480px;
+  }
+}
+
+@media (max-width: 876px) {
+  .contact__modal {
+    bottom: 245px;
+  }
+}
+
+@media (max-width: 780px) {
+  .contact__modal {
+    bottom: 260px;
+  }
 }
 
 /* Landscape phone to portrait tablet */
@@ -1500,7 +1563,7 @@ footer {
   .author__bio {
     margin-top: 20px;
   }
-  .modal {
+  .blog__modal {
     height: 600px;
   }
   .comment__form,
@@ -1519,6 +1582,10 @@ footer {
   .form__wrapper input,
   .form__wrapper textarea {
     width: 90vw;
+  }
+  .contact__modal {
+    bottom: 150px;
+    height: 550px;
   }
   .footer__blog {
     display: none;
@@ -1606,7 +1673,8 @@ footer {
   .post div:nth-child(2) {
     padding: 0;
   }
-  .modal__close {
+  .blog__modal--close,
+  .contact__modal--close {
     right: 20px;
     font-size: 1.5rem;
   }

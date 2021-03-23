@@ -1,14 +1,14 @@
-.blog__wrapper {
+.form__wrapper {
     position: relative;
 }
 
-.modal {
+.contact__modal {
     display: flex;
     position: absolute;
-    right: 51px;
-    left: 51px;
-    bottom: 240px;
-    height: 450px;
+    right: 0;
+    left: 0;
+    bottom: 200px;
+    height: 500px;
     padding: 0 10px;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@
     visibility: hidden;
 }
 
-.modal__close {
+.contact__modal--close {
     position: absolute;
     top: 20px;
     right: 40px;
@@ -27,8 +27,8 @@
     cursor: pointer;
 }
 
-.modal__close:hover,
-.modal__close:focus {
+.contact__modal--close:hover,
+.contact__modal--close:focus {
     color: $primary2;
     transform: scale(1.1);
     transition: 200ms ease-in-out;

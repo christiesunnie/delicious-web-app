@@ -7,8 +7,8 @@ const userEmailBlog = document.getElementById("user__email__blog");
 const userWebsiteBlog = document.getElementById("user__website__blog");
 const commentBlog = document.getElementById("comment__blog");
 const buttonComment = document.querySelector(".button__comment");
-const modalContainer = document.querySelector(".modal");
-const modalClose = document.querySelector(".modal__close");
+const modalContainer = document.querySelector(".blog__modal");
+const modalClose = document.querySelector(".blog__modal--close");
 
 // Create the content of the error message for the form
 const errorElement = document.createElement("h3");
