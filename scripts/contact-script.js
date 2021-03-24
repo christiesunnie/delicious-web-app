@@ -9,11 +9,6 @@ const buttonMessage = document.querySelector(".button__message");
 const modalContainer = document.querySelector(".contact__modal");
 const modalClose = document.querySelector(".contact__modal--close");
 
-// Create the content of the error message for the form
-const errorElement = document.createElement("h3");
-errorElement.textContent = "You are required to fill out the form!";
-modalContainer.appendChild(errorElement);
-
 ////////////////////////////////////////////////////////////
 ///////////////////Events//////////////////////////////////
 // Submit button on blog page and listen to the event
@@ -25,6 +20,13 @@ buttonMessage.addEventListener("click", function () {
         messageContact.value === ""
     ) {
         modalContainer.style.visibility = "visible";
+        // Create the content of the error message for the form
+        if (modalContainer.children.length === 1) {
+            const errorHtml = `
+            <h3>You are required to fill out the form!</h3>
+            `;
+            modalContainer.insertAdjacentHTML("beforeend", errorHtml);
+        }
     }
     userNameContact.value = "";
     userEmailContact.value = "";

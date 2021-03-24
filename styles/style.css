@@ -833,6 +833,9 @@ p.blog__date {
 
 .comment__text {
   position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
 }
 
 .comment__text::before {
@@ -854,6 +857,10 @@ p.blog__date {
 
 .comment__text span {
   font-size: 1rem;
+}
+
+.comment__text p:first-child {
+  text-transform: capitalize;
 }
 
 .blog__form p:nth-child(2) {

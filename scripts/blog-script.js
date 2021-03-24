@@ -7,7 +7,7 @@ const commentNumbers = document.querySelector(".comment__numbers");
 const blogForm = document.querySelector(".blog__form");
 const userNameBlog = document.getElementById("user__name__blog");
 const userEmailBlog = document.getElementById("user__email__blog");
-const userWebsiteBlog = document.getElementById("user__website__blog");
+const userJobBlog = document.getElementById("user__job__blog");
 const commentBlog = document.getElementById("comment__blog");
 const buttonComment = document.querySelector(".button__comment");
 
@@ -25,11 +25,6 @@ const formattedDate = new Intl.DateTimeFormat("en-US", options);
 const formattedToday = formattedDate.format(today);
 
 // Create the content of the error message for the form
-const errorHtml = `
-<h3>You are required to fill out the form!</h3>
-`;
-modalContainer.insertAdjacentHTML("beforeend", errorHtml);
-
 ////////////////////////////////////////////////////////////
 ///////////////////Functions///////////////////////////////
 // Function for formatting the date of comment post
@@ -40,12 +35,89 @@ const formatCommentDate = function (date) {
     if (daysPassed === 0) return "today";
     if (daysPassed === 1) return "yesterday";
     if (daysPassed <= 7 && daysPassed > 1) return `${daysPassed} days ago`;
+};
 
-    return new Intl.DateTimeFormat("en-US").format(date);
+// Function to set comments in localStorage
+const addedCommentToLocalStorage = function (
+    id,
+    userName,
+    userJob,
+    comment,
+    date,
+    time
+) {
+    const commentList = {
+        id,
+        userName,
+        userJob,
+        comment,
+        date,
+        time,
+    };
+    let items = getCommentToLocalStorage();
+    items.push(commentList);
+    localStorage.setItem("commentList", JSON.stringify(items));
+};
+
+// Function to get comments from localStorage
+const getCommentToLocalStorage = function () {
+    return localStorage.getItem("commentList")
+        ? JSON.parse(localStorage.getItem("commentList"))
+        : [];
+};
+
+// Function to update the comment
+const commentLength = (num) => {
+    if (num < 10) {
+        commentNumbers.textContent = `0${num}`;
+    } else {
+        commentNumbers.textContent = num;
+    }
+};
+
+// Set up the comment from localStorage
+const setupItems = () => {
+    let items = getCommentToLocalStorage();
+
+    if (items.length > 0) {
+        items.forEach((item) => {
+            createListItem(
+                item.id,
+                item.userName,
+                item.userJob,
+                item.comment,
+                item.date,
+                today
+            );
+        });
+        // Update the number of comments
+        commentLength(items.length + 2);
+    }
+};
+
+const createListItem = (id, userName, userJob, comment, date, time) => {
+    const commentToDisplay = `
+        <div class="comment" data-id=${id}>
+            <div class="comment__image">
+                <img src="./assets/blog/unknown-user.png" alt="Unknown account image"/>
+            </div>
+            <div class="comment__text">
+                <p><span>${userName}</span> ${
+        userJob !== "" ? `- ${userJob}` : ""
+    } </p>
+                <p>${comment}</p>
+                <p class="blog__date">${date} at ${formatCommentDate(time)}</p>
+            </div>
+        </div>
+            `;
+    // Display the comment to the comment section
+    blogComment.insertAdjacentHTML("beforeend", commentToDisplay);
 };
 
 ////////////////////////////////////////////////////////////
 ///////////////////Events//////////////////////////////////
+window.addEventListener("DOMContentLoaded", setupItems);
+
 // Submit button on blog page and listen to the event
 buttonComment.addEventListener("click", function () {
     // document.querySelectorAll("textarea")
@@ -55,37 +127,38 @@ buttonComment.addEventListener("click", function () {
         commentBlog.value === ""
     ) {
         modalContainer.style.visibility = "visible";
-    } else {
-        // Create the content of the comment
-        const commentToDisplay = `
-            <div class="comment">
-                <div class="comment__image">
-                    <img src="./assets/blog/unknown-user.png" alt="Unknown account image"/>
-                </div>
-                <div class="comment__text">
-                    <p><span>${userNameBlog.value}</span> - Web Developer</p>
-                    <p>${commentBlog.value}</p>
-                    <p class="blog__date">${formattedToday} at ${formatCommentDate(
-            today
-        )}</p>
-                </div>
-            </div>
+        if (modalContainer.children.length === 1) {
+            const errorHtml = `
+            <h3>You are required to fill out the form!</h3>
             `;
-        // Display the comment to the comment section
-        blogComment.insertAdjacentHTML("beforeend", commentToDisplay);
+            modalContainer.insertAdjacentHTML("beforeend", errorHtml);
+        }
+    } else {
+        createListItem(
+            new Date().getTime(),
+            userNameBlog.value,
+            userJobBlog.value,
+            commentBlog.value,
+            formattedToday,
+            today
+        );
+        addedCommentToLocalStorage(
+            new Date().getTime(),
+            userNameBlog.value,
+            userJobBlog.value,
+            commentBlog.value,
+            formattedToday,
+            today
+        );
 
         // Update the number of comments
-        const blogCommentLength = blogComment.children.length - 1;
-        if (blogCommentLength < 10) {
-            commentNumbers.textContent = `0${blogCommentLength}`;
-        } else {
-            commentNumbers.textContent = blogCommentLength;
-        }
+        console.log();
+        commentLength(blogComment.children.length - 1);
     }
     // Empty the value after click the submit button
     userNameBlog.value = "";
     userEmailBlog.value = "";
-    userWebsiteBlog.value = "";
+    userJobBlog.value = "";
     commentBlog.value = "";
 });
 
