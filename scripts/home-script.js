@@ -44,11 +44,65 @@ const menuContainer = document.querySelector(".menu__text");
 const minusButton = document.querySelector(".minus__circle");
 const plusButton = document.querySelector(".plus__circle");
 
+const buttons = document.querySelectorAll("button");
+
 // Set the index of the current item in the testimonial array
 let currentTestimonial = 0;
+let currentOrder = 0;
 
 //////////////////////////////////////////////////////////////
 ////////////////////Functions////////////////////////////////
+// Function to create the new order
+const orderToDislay = function (item, quantity) {
+    const orderItem = `
+    <div class="order__item">
+        <p class="order__name">${item}</p>
+        <button
+            class="minus__circle"
+            id="vegetarian"
+            aria-hidden
+            aria-label="Minus button to decrease the quantity of the order"
+        >
+            <i class="fas fa-minus-circle"></i>
+        </button>
+         <p class="order__quantity">${quantity}</p>
+        <button
+            class="plus__circle"
+            id="vegetarian"
+            aria-hidden
+            aria-label="Plus button to decrease the quantity of the order"
+        >
+            <i class="fas fa-plus-circle"></i>
+        </button>
+    </div>
+    `;
+    orderList.insertAdjacentHTML("beforebegin", orderItem);
+};
+
+// Function to click the button for the order
+const buttonOrder = () => {
+    buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+            console.log(this);
+            modalContainer.style.visibility = "visible";
+            if (
+                orderContainer.children[0].textContent === "Your cart is empty!"
+            ) {
+                if (this.className === "plus__circle") {
+                    orderContainer.children[0].textContent = "Your cart has:";
+                    currentOrder += 1;
+                    orderToDislay(this.id, currentOrder);
+                } else if (this.className === "minus__circle") {
+                    modalContainer.style.visibility = "visible";
+                }
+            } else {
+                orderToDislay(this.id, currentOrder);
+            }
+        });
+    });
+};
+buttonOrder();
+
 // Function to get the data from testimonial array
 const testimonialsFunc = function (person) {
     // Store the objects in the testimonial array
@@ -57,16 +111,6 @@ const testimonialsFunc = function (person) {
     testimonialClient.textContent = item.client;
     // Print the text property on the page
     testimonialText.textContent = item.text;
-};
-
-// Function to create the new order
-const orderToDislay = function (item, quantity) {
-    const orderItem = `
-    <li>
-        ${item}: <span class="order__quantity">${quantity}</span>
-    </li>
-    `;
-    orderList.insertAdjacentHTML("beforebegin", orderItem);
 };
 
 ////////////////////////////////////////////////////////////
@@ -110,46 +154,46 @@ nextButton.addEventListener("click", function () {
 });
 
 // Adding the quantity of the order into the shopping cart event
-menuContainer.addEventListener("click", function (e) {
-    const targetElement = e.target;
-    // Get the name of the order's items
-    const orderName =
-        targetElement.parentElement.parentElement.children[0].textContent;
-    // Check if the target event is the minus button
-    if (
-        targetElement.classList[0] === "minus__circle" ||
-        targetElement.classList[1] === "fa-minus-circle"
-    ) {
-        +cartQuantity.textContent--;
+// menuContainer.addEventListener("click", function (e) {
+//     const targetElement = e.target;
+//     // Get the name of the order's items
+//     const orderName =
+//         targetElement.parentElement.parentElement.children[0].textContent;
+//     // Check if the target event is the minus button
+//     if (
+//         targetElement.classList[0] === "minus__circle" ||
+//         targetElement.classList[1] === "fa-minus-circle"
+//     ) {
+//         +cartQuantity.textContent--;
 
-        // Only show the cart quantity if there is the order quantity in the cart
-        if (cartQuantity.textContent !== "" && +cartQuantity.textContent > 0) {
-            cartQuantity.style.visibility = "visible";
-            modalContainer.style.visibility = "visible";
-            orderContainer.children[0].textContent = "Your cart has:";
-            // Diplay the order list
-            orderToDislay(orderName, +cartQuantity.textContent - 1);
-        } else {
-            // If there is no order, empty and hide  the cart
-            cartQuantity.style.visibility = "hidden";
-            cartQuantity.textContent = "";
-        }
-    }
+//         // Only show the cart quantity if there is the order quantity in the cart
+//         if (cartQuantity.textContent !== "" && +cartQuantity.textContent > 0) {
+//             cartQuantity.style.visibility = "visible";
+//             modalContainer.style.visibility = "visible";
+//             orderContainer.children[0].textContent = "Your cart has:";
+//             // Diplay the order list
+//             orderToDislay(orderName, +cartQuantity.textContent - 1);
+//         } else {
+//             // If there is no order, empty and hide  the cart
+//             cartQuantity.style.visibility = "hidden";
+//             cartQuantity.textContent = "";
+//         }
+//     }
 
-    // Check if the target event is the plus button
-    if (
-        targetElement.classList[0] === "plus__circle" ||
-        targetElement.classList[1] === "fa-plus-circle"
-    ) {
-        // Show the cart and update the order quantity
-        cartQuantity.style.visibility = "visible";
-        +cartQuantity.textContent++;
-        modalContainer.style.visibility = "visible";
-        orderContainer.children[0].textContent = "Your cart has:";
-        // Diplay the order list
-        orderToDislay(orderName, +cartQuantity.textContent);
-    }
-});
+//     // Check if the target event is the plus button
+//     if (
+//         targetElement.classList[0] === "plus__circle" ||
+//         targetElement.classList[1] === "fa-plus-circle"
+//     ) {
+//         // Show the cart and update the order quantity
+//         cartQuantity.style.visibility = "visible";
+//         +cartQuantity.textContent++;
+//         modalContainer.style.visibility = "visible";
+//         orderContainer.children[0].textContent = "Your cart has:";
+//         // Diplay the order list
+//         orderToDislay(orderName, +cartQuantity.textContent);
+//     }
+// });
 
 // Shopping cart modal event
 shoppingCart.addEventListener("click", function () {
@@ -160,5 +204,3 @@ shoppingCart.addEventListener("click", function () {
 modalClose.addEventListener("click", function () {
     modalContainer.style.visibility = "hidden";
 });
-
-console.log(orderList.children);

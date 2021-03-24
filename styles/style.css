@@ -543,6 +543,37 @@ template {
   color: #64a604;
 }
 
+.order__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.order__name {
+  text-transform: uppercase;
+  padding-right: 20px;
+}
+
+.order__quantity {
+  font-weight: bold;
+}
+
+.order__item button {
+  position: unset;
+  margin: 0 10px;
+}
+
+.order__item button:hover,
+.order__item button:focus {
+  color: #fff;
+}
+
 .menu__category p {
   color: #474747;
   font-size: 14px;

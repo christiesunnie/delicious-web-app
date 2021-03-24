@@ -109,6 +109,32 @@
     color: $secondary1;
 }
 
+// Modal cart shopping order styles
+.order__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order__name {
+    text-transform: uppercase;
+    padding-right: 20px;
+}
+
+.order__quantity {
+    font-weight: bold;
+}
+
+.order__item button {
+    position: unset;
+    margin: 0 10px;
+}
+
+.order__item button:hover,
+.order__item button:focus {
+    color: #fff;
+}
+
 .menu__category p {
     @include font__style($primary4, 14px, $line__height1, $letter__spacing1);
 }
