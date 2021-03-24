@@ -29,6 +29,7 @@ const testimonials = [
 const shoppingCart = document.querySelector(".cart");
 const modalContainer = document.querySelector(".header__modal");
 const modalClose = document.querySelector(".header__modal--close");
+const orderContainer = document.querySelector(".order");
 const orderList = document.querySelector(".order__list");
 
 // Tesimonials section DOM elements
@@ -60,12 +61,12 @@ const testimonialsFunc = function (person) {
 
 // Function to create the new order
 const orderToDislay = function (item, quantity) {
-    const orderElement = document.createElement("li");
     const orderItem = `
-    ${item}: <span class="order__quantity">${quantity}</span>
+    <li>
+        ${item}: <span class="order__quantity">${quantity}</span>
+    </li>
     `;
-    orderElement.innerHTML = orderItem;
-    orderList.append(orderElement);
+    orderList.insertAdjacentHTML("beforebegin", orderItem);
 };
 
 ////////////////////////////////////////////////////////////
@@ -120,11 +121,14 @@ menuContainer.addEventListener("click", function (e) {
         targetElement.classList[1] === "fa-minus-circle"
     ) {
         +cartQuantity.textContent--;
-        // Diplay the order list
-        orderToDislay(orderName, cartQuantity.textContent);
+
         // Only show the cart quantity if there is the order quantity in the cart
         if (cartQuantity.textContent !== "" && +cartQuantity.textContent > 0) {
             cartQuantity.style.visibility = "visible";
+            modalContainer.style.visibility = "visible";
+            orderContainer.children[0].textContent = "Your cart has:";
+            // Diplay the order list
+            orderToDislay(orderName, +cartQuantity.textContent - 1);
         } else {
             // If there is no order, empty and hide  the cart
             cartQuantity.style.visibility = "hidden";
@@ -140,8 +144,10 @@ menuContainer.addEventListener("click", function (e) {
         // Show the cart and update the order quantity
         cartQuantity.style.visibility = "visible";
         +cartQuantity.textContent++;
+        modalContainer.style.visibility = "visible";
+        orderContainer.children[0].textContent = "Your cart has:";
         // Diplay the order list
-        orderToDislay(orderName, cartQuantity.textContent);
+        orderToDislay(orderName, +cartQuantity.textContent);
     }
 });
 
@@ -154,3 +160,5 @@ shoppingCart.addEventListener("click", function () {
 modalClose.addEventListener("click", function () {
     modalContainer.style.visibility = "hidden";
 });
+
+console.log(orderList.children);
