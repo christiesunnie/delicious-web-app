@@ -79,30 +79,6 @@ const orderToDislay = function (item, quantity) {
     orderList.insertAdjacentHTML("beforebegin", orderItem);
 };
 
-// Function to click the button for the order
-const buttonOrder = () => {
-    buttons.forEach((button) => {
-        button.addEventListener("click", function () {
-            console.log(this);
-            modalContainer.style.visibility = "visible";
-            if (
-                orderContainer.children[0].textContent === "Your cart is empty!"
-            ) {
-                if (this.className === "plus__circle") {
-                    orderContainer.children[0].textContent = "Your cart has:";
-                    currentOrder += 1;
-                    orderToDislay(this.id, currentOrder);
-                } else if (this.className === "minus__circle") {
-                    modalContainer.style.visibility = "visible";
-                }
-            } else {
-                orderToDislay(this.id, currentOrder);
-            }
-        });
-    });
-};
-buttonOrder();
-
 // Function to get the data from testimonial array
 const testimonialsFunc = function (person) {
     // Store the objects in the testimonial array
@@ -154,46 +130,48 @@ nextButton.addEventListener("click", function () {
 });
 
 // Adding the quantity of the order into the shopping cart event
-// menuContainer.addEventListener("click", function (e) {
-//     const targetElement = e.target;
-//     // Get the name of the order's items
-//     const orderName =
-//         targetElement.parentElement.parentElement.children[0].textContent;
-//     // Check if the target event is the minus button
-//     if (
-//         targetElement.classList[0] === "minus__circle" ||
-//         targetElement.classList[1] === "fa-minus-circle"
-//     ) {
-//         +cartQuantity.textContent--;
+menuContainer.addEventListener("click", function (e) {
+    console.log(this.className);
+    console.log(e);
+    const targetElement = e.target;
+    // Get the name of the order's items
+    const orderName =
+        targetElement.parentElement.parentElement.children[0].textContent;
+    // Check if the target event is the minus button
+    if (
+        targetElement.classList[0] === "minus__circle" ||
+        targetElement.classList[1] === "fa-minus-circle"
+    ) {
+        +cartQuantity.textContent--;
 
-//         // Only show the cart quantity if there is the order quantity in the cart
-//         if (cartQuantity.textContent !== "" && +cartQuantity.textContent > 0) {
-//             cartQuantity.style.visibility = "visible";
-//             modalContainer.style.visibility = "visible";
-//             orderContainer.children[0].textContent = "Your cart has:";
-//             // Diplay the order list
-//             orderToDislay(orderName, +cartQuantity.textContent - 1);
-//         } else {
-//             // If there is no order, empty and hide  the cart
-//             cartQuantity.style.visibility = "hidden";
-//             cartQuantity.textContent = "";
-//         }
-//     }
+        // Only show the cart quantity if there is the order quantity in the cart
+        if (cartQuantity.textContent !== "" && +cartQuantity.textContent > 0) {
+            cartQuantity.style.visibility = "visible";
+            modalContainer.style.visibility = "visible";
+            orderContainer.children[0].textContent = "Your cart has:";
+            // Diplay the order list
+            orderToDislay(orderName, +cartQuantity.textContent - 1);
+        } else {
+            // If there is no order, empty and hide  the cart
+            cartQuantity.style.visibility = "hidden";
+            cartQuantity.textContent = "";
+        }
+    }
 
-//     // Check if the target event is the plus button
-//     if (
-//         targetElement.classList[0] === "plus__circle" ||
-//         targetElement.classList[1] === "fa-plus-circle"
-//     ) {
-//         // Show the cart and update the order quantity
-//         cartQuantity.style.visibility = "visible";
-//         +cartQuantity.textContent++;
-//         modalContainer.style.visibility = "visible";
-//         orderContainer.children[0].textContent = "Your cart has:";
-//         // Diplay the order list
-//         orderToDislay(orderName, +cartQuantity.textContent);
-//     }
-// });
+    // Check if the target event is the plus button
+    if (
+        targetElement.classList[0] === "plus__circle" ||
+        targetElement.classList[1] === "fa-plus-circle"
+    ) {
+        // Show the cart and update the order quantity
+        cartQuantity.style.visibility = "visible";
+        +cartQuantity.textContent++;
+        modalContainer.style.visibility = "visible";
+        orderContainer.children[0].textContent = "Your cart has:";
+        // Diplay the order list
+        orderToDislay(orderName, +cartQuantity.textContent);
+    }
+});
 
 // Shopping cart modal event
 shoppingCart.addEventListener("click", function () {
