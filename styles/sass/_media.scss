@@ -96,6 +96,10 @@
         font-size: 0.85rem;
     }
 
+    .nav__search a {
+        font-size: 1.5rem;
+    }
+
     // Home page style
     .image2 {
         right: 30px;
@@ -104,6 +108,17 @@
     // Blog page style
     .blog__wrapper {
         padding: 70px 30px;
+    }
+
+    .blog__modal {
+        right: 30px;
+        left: 30px;
+        bottom: 150px;
+    }
+
+    // Contact page style
+    .contact__modal {
+        bottom: 215px;
     }
 
     // Footer styles
@@ -122,20 +137,61 @@
 }
 
 /* Portrait tablet and small desktops */
-@media (max-width: 940px) {
-    // Header styles
-    .home,
-    .blog,
-    .contact {
-        background-size: cover;
+@media (max-width: 972px) {
+    .header__wrapper {
+        flex-flow: column wrap;
+        @include wrapper(100%);
+    }
+
+    .header__nav,
+    .nav__list {
+        background: $primary2;
+        opacity: 0.9;
+    }
+
+    .header__nav {
+        padding: 0 20px;
+    }
+
+    .nav__list a {
+        font-size: 1rem;
     }
 
     .nav__list {
+        margin-top: 0;
+        flex-flow: column wrap;
         visibility: hidden;
     }
 
+    .nav__link {
+        padding: 15px 0;
+    }
+
+    .nav__search {
+        position: absolute;
+        top: -5px;
+        right: 80px;
+    }
+
+    .cart__quantity {
+        bottom: 5px;
+    }
+
+    .show__links,
     .button__hamburger {
         visibility: visible;
+    }
+
+    .button__rotate {
+        transform: rotate(90deg);
+    }
+
+    .nav__link.cart::before {
+        bottom: 13px;
+    }
+
+    .nav__link.cart::after {
+        bottom: 15px;
     }
 
     // Home page style
@@ -147,20 +203,49 @@
     .form__wrapper {
         padding: 40px 0;
     }
+
     .info__content {
         max-width: 100%;
         padding: 40px 30px;
+    }
+
+    .contact__modal {
+        bottom: 170px;
+        height: 480px;
+    }
+}
+
+@media (max-width: 876px) {
+    .contact__modal {
+        bottom: 245px;
+    }
+}
+
+@media (max-width: 780px) {
+    .contact__modal {
+        bottom: 260px;
     }
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
     // Header style
-    .header__wrapper h1 {
+    .header__wrapper h1,
+    .button__hamburger {
         font-size: 1.5rem;
     }
 
+    .nav__search {
+        top: -10px;
+    }
+
     // Home page style
+    .home__wrapper h2::after,
+    .info__text h2::after,
+    .testimonials h4::after {
+        @include underline(60%, 45%);
+    }
+
     .restaurant__info {
         padding: 120px 0 100px 0;
     }
@@ -184,14 +269,6 @@
         padding: 100px 0 150px 0;
     }
 
-    .angle--left {
-        left: 41%;
-    }
-
-    .angle--right {
-        right: 43%;
-    }
-
     // Blog page styles
     .author__container {
         flex-flow: column wrap;
@@ -200,6 +277,10 @@
 
     .author__bio {
         margin-top: 20px;
+    }
+
+    .blog__modal {
+        height: 600px;
     }
 
     // Contact page styles
@@ -220,6 +301,11 @@
         width: 90vw;
     }
 
+    .contact__modal {
+        bottom: 150px;
+        height: 550px;
+    }
+
     // Footer styles
     .footer__blog {
         display: none;
@@ -232,12 +318,38 @@
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+    // Header background images styles
+    .home,
+    .blog,
+    .contact {
+        height: 55vh;
+    }
+
     // Wrapper styles
     .home__wrapper,
     .recipes__wrapper,
     .blog__wrapper,
     .footer__wrapper {
         @include wrapper(100%);
+    }
+
+    // Header styles
+    .nav__list {
+        margin-bottom: 0;
+    }
+
+    .nav__search {
+        background: $primary2;
+        opacity: 0.9;
+        position: relative;
+        top: 0;
+        right: 0;
+        margin: 0;
+        visibility: hidden;
+    }
+
+    .show__links {
+        visibility: visible;
     }
 
     // Home page styles
@@ -255,7 +367,6 @@
         padding: 70px 30px;
     }
 
-    .home__wrapper h2::after,
     .testimonials h4::after {
         @include underline(60%, 38%);
     }
@@ -265,7 +376,7 @@
     }
 
     .angle--right {
-        right: 38%;
+        right: 35%;
     }
 
     // Blog page style
@@ -296,6 +407,13 @@
 
     .post div:nth-child(2) {
         padding: 0;
+    }
+
+    .header__modal--close,
+    .blog__modal--close,
+    .contact__modal--close {
+        right: 20px;
+        font-size: 1.5rem;
     }
 
     // Footer style

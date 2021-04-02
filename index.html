@@ -12,72 +12,86 @@
             rel="stylesheet"
         />
         <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
+        <script defer src="scripts/script.js"></script>
+        <script defer src="scripts/home-script.js"></script>
     </head>
     <body>
         <!-- Header starts -->
         <header class="home">
             <!-- Home wrapper starts -->
-            <div class="header__wrapper">
-                <h1 class="home__logo">
-                    <a href="index.html" aria-label="Go to home section"
-                        >delicious</a
-                    >
-                </h1>
-                <!-- Home navigation starts -->
-                <nav class="header__nav">
-                    <ul class="nav__list">
-                        <li class="nav__link">
-                            <a href="#" aria-label="Go to home section">home</a>
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Go to about section"
-                                >about</a
-                            >
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Go to recipes section"
-                                >recipes</a
-                            >
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Go to nutrition section"
-                                >nutrition</a
-                            >
-                        </li>
-                        <li class="nav__link">
-                            <a href="blog.html" aria-label="Go to blog section"
-                                >blog</a
-                            >
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Go to shop section">shop</a>
-                        </li>
-                        <li class="nav__link">
-                            <a
-                                href="contact.html"
-                                aria-label="Go to contact section"
-                                >contact</a
-                            >
-                        </li>
-                        <li class="nav__link cart">
-                            <a href="#" aria-label="Shopping cart"
-                                ><i aria-hidden class="fas fa-shopping-bag"></i
-                            ></a>
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Searching"
-                                ><i aria-hidden class="fas fa-search"></i
-                            ></a>
-                        </li>
-                    </ul>
+            <nav class="header__wrapper">
+                <div class="header__nav">
+                    <h1 class="home__logo">
+                        <a href="index.html" aria-label="Go to home section"
+                            >delicious</a
+                        >
+                    </h1>
+
                     <button
                         class="button__hamburger"
                         aria-label="Hamburger menu"
                     >
                         <i aria-hidden class="fas fa-bars"></i>
                     </button>
-                </nav>
-            </div>
+                </div>
+                <!-- Home navigation starts -->
+                <ul class="nav__list">
+                    <li class="nav__link">
+                        <a href="#" aria-label="Go to home section">home</a>
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Go to about section">about</a>
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Go to recipes section"
+                            >recipes</a
+                        >
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Go to nutrition section"
+                            >nutrition</a
+                        >
+                    </li>
+                    <li class="nav__link">
+                        <a href="blog.html" aria-label="Go to blog section"
+                            >blog</a
+                        >
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Go to shop section">shop</a>
+                    </li>
+                    <li class="nav__link">
+                        <a
+                            href="contact.html"
+                            aria-label="Go to contact section"
+                            >contact</a
+                        >
+                    </li>
+                </ul>
+                <ul class="nav__search">
+                    <li class="nav__link cart">
+                        <a href="#" aria-label="Shopping cart"
+                            ><i aria-hidden class="fas fa-shopping-bag"></i
+                        ></a>
+                        <span class="cart__quantity">0</span>
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Searching"
+                            ><i aria-hidden class="fas fa-search"></i
+                        ></a>
+                    </li>
+                </ul>
+
+                <div class="header__modal">
+                    <span class="header__modal--close" aria-label="Close button"
+                        ><i aria-hidden class="fas fa-times"></i
+                    ></span>
+                    <div class="order">
+                        <h2>Your cart is empty!</h2>
+                        <div class="order__list"></div>
+                    </div>
+                </div>
+            </nav>
         </header>
 
         <!-- Main sections start -->
@@ -97,7 +111,9 @@
                             pea sierra leaone bologi leek soko chicory celtuc
                             parsley jicama salsify.
                         </p>
-                        <button class="button__recipes">view recipes</button>
+                        <button class="button__recipes">
+                            <a href="#">view recipes</a>
+                        </button>
                     </div>
                 </div>
                 <!-- Recipes images start -->
@@ -126,6 +142,22 @@
                                 esstum magis kohirabi weish onion daikon
                                 amaranth tatsoi tomatillo melon aszuki bean.
                             </p>
+                            <button
+                                class="minus__circle"
+                                data-id="vegetarian"
+                                aria-hidden
+                                aria-label="Minus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-minus-circle"></i>
+                            </button>
+                            <button
+                                class="plus__circle"
+                                data-id="vegetarian"
+                                aria-hidden
+                                aria-label="Plus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="menu__container">
@@ -139,6 +171,22 @@
                                 esstum magis kohirabi weish onion daikon
                                 amaranth tatsoi tomatillo melon aszuki bean.
                             </p>
+                            <button
+                                class="minus__circle"
+                                data-id="appetizers"
+                                aria-hidden
+                                aria-label="Minus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-minus-circle"></i>
+                            </button>
+                            <button
+                                class="plus__circle"
+                                data-id="appetizers"
+                                aria-hidden
+                                aria-label="Plus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="menu__container">
@@ -152,6 +200,22 @@
                                 esstum magis kohirabi weish onion daikon
                                 amaranth tatsoi tomatillo melon aszuki bean.
                             </p>
+                            <button
+                                class="minus__circle"
+                                data-id="desserts"
+                                aria-hidden
+                                aria-label="Minus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-minus-circle"></i>
+                            </button>
+                            <button
+                                class="plus__circle"
+                                data-id="desserts"
+                                aria-hidden
+                                aria-label="Plus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="menu__container">
@@ -165,6 +229,22 @@
                                 esstum magis kohirabi weish onion daikon
                                 amaranth tatsoi tomatillo melon aszuki bean.
                             </p>
+                            <button
+                                class="minus__circle"
+                                data-id="drinks"
+                                aria-hidden
+                                aria-label="Minus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-minus-circle"></i>
+                            </button>
+                            <button
+                                class="plus__circle"
+                                data-id="drinks"
+                                aria-hidden
+                                aria-label="Plus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="menu__container">
@@ -178,6 +258,22 @@
                                 esstum magis kohirabi weish onion daikon
                                 amaranth tatsoi tomatillo melon aszuki bean.
                             </p>
+                            <button
+                                class="minus__circle"
+                                data-id="salads"
+                                aria-hidden
+                                aria-label="Minus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-minus-circle"></i>
+                            </button>
+                            <button
+                                class="plus__circle"
+                                data-id="salads"
+                                aria-hidden
+                                aria-label="Plus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="menu__container">
@@ -191,11 +287,27 @@
                                 esstum magis kohirabi weish onion daikon
                                 amaranth tatsoi tomatillo melon aszuki bean.
                             </p>
+                            <button
+                                class="minus__circle"
+                                data-id="side-dishes"
+                                aria-hidden
+                                aria-label="Minus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-minus-circle"></i>
+                            </button>
+                            <button
+                                class="plus__circle"
+                                data-id="side-dishes"
+                                aria-hidden
+                                aria-label="Plus button to decrease the quantity of the order"
+                            >
+                                <i class="fas fa-plus-circle"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             <!-- About restaurant starts -->
             <section class="restaurant__wrapper">
                 <!-- Restaurant info starts -->
@@ -252,16 +364,24 @@
                 </div>
                 <!-- Restaurant testimonials start -->
                 <div class="restaurant__testimonials">
-                    <div class="testimonials">
-                        <h4>hungry clients</h4>
-                        <span
-                            class="quote--left"
-                            aria-label="Curly double quotes left"
+                    <div class="testimonials__button">
+                        <button
+                            class="angle--left"
+                            aria-label="Previous testimonials arrow left click"
                         >
-                            <i aria-hidden="true" class="fas fa-quote-left">
-                            </i>
-                        </span>
-                        <p>
+                            <i aria-hidden class="fas fa-angle-left"> </i>
+                        </button>
+                        <button
+                            class="angle--right"
+                            aria-label="Next testimonials arrow right click"
+                        >
+                            <i aria-hidden class="fas fa-angle-right"> </i>
+                        </button>
+                    </div>
+                    <div class="testimonials">
+                        <!-- Testimonials slideshow here -->
+                        <h4 class="testimonial__client">hungry clients</h4>
+                        <p class="testimonial__text">
                             Beetroot water spinach okra water chestnut ricebean
                             pea catsear courgette summer purslane. Water spinach
                             arugula pea tatsoi aubergine spring onion bush
@@ -270,16 +390,11 @@
                             chickpea dandellion.
                         </p>
                         <span
-                            class="angle--left"
-                            aria-label="Previous testimonials arrow left click"
+                            class="quote--left"
+                            aria-label="Curly double quotes left"
                         >
-                            <i aria-hidden class="fas fa-angle-left"> </i>
-                        </span>
-                        <span
-                            class="angle--right"
-                            aria-label="Next testimonials arrow right click"
-                        >
-                            <i aria-hidden class="fas fa-angle-right"> </i>
+                            <i aria-hidden="true" class="fas fa-quote-left">
+                            </i>
                         </span>
                         <span
                             class="quote--right"
@@ -358,11 +473,11 @@
                     <form class="social__form" action="">
                         <input
                             type="email"
-                            name="email address"
-                            id="email"
+                            name="email__home"
+                            id="email__home"
                             placeholder="Enter your email"
                         />
-                        <label class="visuallyHidden" for="email"
+                        <label class="visuallyHidden" for="email__home"
                             >Email address</label
                         >
                         <button

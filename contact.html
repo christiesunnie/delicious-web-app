@@ -12,72 +12,76 @@
             rel="stylesheet"
         />
         <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
+        <script defer src="scripts/script.js"></script>
+        <script defer src="scripts/contact-script.js"></script>
     </head>
     <body>
         <!-- Header starts -->
         <header class="contact">
             <!-- Home wrapper starts -->
-            <div class="header__wrapper">
-                <h1 class="home__logo">
-                    <a href="index.html" aria-label="Go to home section"
-                        >delicious</a
-                    >
-                </h1>
-                <!-- Home navigation starts -->
-                <nav class="header__nav">
-                    <ul class="nav__list">
-                        <li class="nav__link">
-                            <a href="index.html" aria-label="Go to home section"
-                                >home</a
-                            >
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Go to about section"
-                                >about</a
-                            >
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Go to recipes section"
-                                >recipes</a
-                            >
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Go to nutrition section"
-                                >nutrition</a
-                            >
-                        </li>
-                        <li class="nav__link">
-                            <a href="blog.html" aria-label="Go to blog section"
-                                >blog</a
-                            >
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Go to shop section">shop</a>
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Go to contact section"
-                                >contact</a
-                            >
-                        </li>
-                        <li class="nav__link cart">
-                            <a href="#" aria-label="Shopping cart"
-                                ><i aria-hidden class="fas fa-shopping-bag"></i
-                            ></a>
-                        </li>
-                        <li class="nav__link">
-                            <a href="#" aria-label="Searching"
-                                ><i aria-hidden class="fas fa-search"></i
-                            ></a>
-                        </li>
-                    </ul>
+            <nav class="header__wrapper">
+                <div class="header__nav">
+                    <h1 class="home__logo">
+                        <a href="index.html" aria-label="Go to home section"
+                            >delicious</a
+                        >
+                    </h1>
+
                     <button
                         class="button__hamburger"
                         aria-label="Hamburger menu"
                     >
                         <i aria-hidden class="fas fa-bars"></i>
                     </button>
-                </nav>
-            </div>
+                </div>
+                <!-- Home navigation starts -->
+                <ul class="nav__list">
+                    <li class="nav__link">
+                        <a href="index.html" aria-label="Go to home section"
+                            >home</a
+                        >
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Go to about section">about</a>
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Go to recipes section"
+                            >recipes</a
+                        >
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Go to nutrition section"
+                            >nutrition</a
+                        >
+                    </li>
+                    <li class="nav__link">
+                        <a href="blog.html" aria-label="Go to blog section"
+                            >blog</a
+                        >
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Go to shop section">shop</a>
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Go to contact section"
+                            >contact</a
+                        >
+                    </li>
+                </ul>
+                <ul class="nav__search">
+                    <li class="nav__link cart">
+                        <a href="#" aria-label="Shopping cart"
+                            ><i aria-hidden class="fas fa-shopping-bag"></i
+                        ></a>
+                        <span class="cart__quantity">0</span>
+                    </li>
+                    <li class="nav__link">
+                        <a href="#" aria-label="Searching"
+                            ><i aria-hidden class="fas fa-search"></i
+                        ></a>
+                    </li>
+                </ul>
+            </nav>
         </header>
 
         <!-- Main section starts -->
@@ -88,53 +92,72 @@
                     <form action="">
                         <div class="form__name">
                             <input
-                                id="user__name"
-                                name="user__name"
+                                id="user__name__contact"
+                                name="user__name__contact"
                                 type="text"
-                                placeholder="Your Name"
+                                placeholder="Your Name *"
                             />
-                            <label class="visuallyHidden" for="user__name"
+                            <label
+                                class="visuallyHidden"
+                                for="user__name__contact"
                                 >Your Name</label
                             >
                         </div>
                         <div class="form__email">
                             <input
-                                id="user__email"
-                                name="user__email"
+                                id="user__email__contact"
+                                name="user__email__contact"
                                 type="email"
-                                placeholder="Your Email"
+                                placeholder="Your Email *"
                             />
-                            <label class="visuallyHidden" for="user__email"
+                            <label
+                                class="visuallyHidden"
+                                for="user__email__contact"
                                 >Your Email</label
                             >
                         </div>
                         <div class="form__subject">
                             <input
-                                id="subject"
-                                name="subject"
+                                id="subject__contact"
+                                name="subject__contact"
                                 type="text"
                                 placeholder="Subject"
                             />
-                            <label class="visuallyHidden" for="subject"></label>
+                            <label
+                                class="visuallyHidden"
+                                for="subject__contact"
+                            ></label>
                         </div>
                         <div class="form__message">
                             <textarea
-                                name="message"
-                                id="message"
+                                name="message__contact"
+                                id="message__contact"
                                 cols="30"
                                 rows="10"
-                                placeholder="Message"
+                                placeholder="Message *"
                             ></textarea>
-                            <label class="visuallyHidden" for="message"></label>
+                            <label
+                                class="visuallyHidden"
+                                for="message__contact"
+                            ></label>
                         </div>
                     </form>
                     <button
-                        class="button__send"
+                        class="button__message"
                         aria-label="Send message button with a green long right arrow"
                     >
                         send message
                         <i aria-hidden class="fas fa-long-arrow-alt-right"></i>
                     </button>
+                    <!-- Modal display the error message -->
+                    <div class="contact__modal">
+                        <span
+                            class="contact__modal--close"
+                            aria-label="Close button"
+                            ><i aria-hidden class="fas fa-times"></i
+                        ></span>
+                        <!-- Error message go in here -->
+                    </div>
                 </div>
                 <div class="info__wrapper">
                     <div class="info__content">
