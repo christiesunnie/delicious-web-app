@@ -286,19 +286,19 @@ template {
 
 .home {
   background: url(../assets/home/home_1.jpeg) center bottom no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 100vh;
 }
 
 .blog {
   background: url(../assets/blog/blog_1.jpeg) center bottom no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 60vh;
 }
 
 .contact {
   background: url(../assets/contact/contact_1.jpeg) center bottom no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   height: 70vh;
 }
 
@@ -309,6 +309,7 @@ template {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  position: relative;
   max-width: 1500px;
   margin: 0 auto;
   width: 95%;
@@ -331,50 +332,49 @@ template {
   color: #000000;
 }
 
+.nav__search a {
+  font-size: 1.5rem;
+}
+
 .header__wrapper a:hover,
 .header__wrapper a:active,
 .header__wrapper a:focus {
   color: #64a604;
 }
 
-.header_nav {
-  position: relative;
-}
-
-.nav__list {
+.nav__list,
+.nav__search {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .nav__link {
   margin-left: 25px;
-  margin-top: 10px;
 }
 
 .nav__link.cart {
   position: relative;
 }
 
-.nav__link.cart::before {
-  content: "";
-  color: #f6f6f6;
+.cart__quantity {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 27px;
+  height: 27px;
+  padding: 3px;
   background: #64a604;
   border-radius: 50%;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  bottom: -10px;
-  right: -13px;
-}
-
-.nav__link.cart::after {
-  content: "2";
+  text-align: center;
   color: #fff;
-  font-size: 0.7rem;
-  position: absolute;
-  bottom: -7px;
-  right: -7px;
+  visibility: hidden;
 }
 
 .button__hamburger {
@@ -382,9 +382,19 @@ template {
   border-style: none;
   font-size: 2rem;
   position: absolute;
-  top: 10px;
+  top: 20px;
   right: 20px;
+  cursor: pointer;
   visibility: hidden;
+}
+
+.order__list {
+  list-style-type: square;
+  text-transform: capitalize;
+}
+
+.order__list li {
+  padding: 10px 0;
 }
 
 .home__wrapper {
@@ -505,6 +515,65 @@ template {
           column-gap: 5px;
 }
 
+.menu__category {
+  position: relative;
+}
+
+.minus__circle,
+.plus__circle {
+  background: transparent;
+  border: 1px solid transparent;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+.minus__circle {
+  right: 50px;
+}
+
+.plus__circle {
+  right: 10px;
+}
+
+.minus__circle:hover,
+.plus__circle:hover,
+.minus__circle:focus,
+.plus__circle:focus {
+  color: #64a604;
+}
+
+.order__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.order__name {
+  text-transform: uppercase;
+  padding-right: 20px;
+}
+
+.order__quantity {
+  font-weight: bold;
+}
+
+.order__item button {
+  position: unset;
+  margin: 0 10px;
+}
+
+.order__item button:hover,
+.order__item button:focus {
+  color: #fff;
+}
+
 .menu__category p {
   color: #474747;
   font-size: 14px;
@@ -518,6 +587,10 @@ template {
   font-size: 0.9rem;
   line-height: 24px;
   letter-spacing: 0.3px;
+}
+
+.button__recipes a {
+  color: #f6f6f6;
 }
 
 .button__recipes {
@@ -612,20 +685,60 @@ template {
 
 .angle--left,
 .angle--right {
-  bottom: -70px;
-  font-size: 1.5rem;
   position: absolute;
+  bottom: 60px;
+  background: transparent;
+  border: 1px solid transparent;
+  font-size: 1.5rem;
+  color: #fff;
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+  cursor: pointer;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
 }
 
 .angle--left {
-  color: #eef6d1;
-  left: 45%;
+  left: 44%;
 }
 
 .angle--right {
-  color: #fff;
-  font-weight: bold;
-  right: 46%;
+  right: 40%;
+}
+
+.angle--left:hover,
+.angle--right:hover,
+.angle--left:focus,
+.angle--right:focus {
+  border-radius: 5px;
 }
 
 .blog__wrapper {
@@ -708,16 +821,16 @@ p.blog__date {
 
 .author__image,
 .comment__image {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
   padding-right: 30px;
 }
 
 .author__bio,
 .comment__text {
   background: #f6f6f6;
-  padding: 0 40px;
+  padding: 0 15px;
 }
 
 .blog__posts {
@@ -751,6 +864,9 @@ p.blog__date {
 
 .comment__text {
   position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 auto;
+          flex: 1 auto;
 }
 
 .comment__text::before {
@@ -772,6 +888,10 @@ p.blog__date {
 
 .comment__text span {
   font-size: 1rem;
+}
+
+.comment__text p:first-child {
+  text-transform: capitalize;
 }
 
 .blog__form p:nth-child(2) {
@@ -840,13 +960,13 @@ p.blog__date {
 .contact__wrapper h2,
 .contact__wrapper h4,
 .info__hours p:first-of-type span,
-.button__send {
+.button__message {
   font-family: "Raleway", sans-serif;
   text-transform: uppercase;
 }
 
-.button__send:hover,
-.button__send:focus {
+.button__message:hover,
+.button__message:focus {
   color: #000000;
   cursor: pointer;
 }
@@ -910,7 +1030,7 @@ p.blog__date {
   width: 100%;
 }
 
-.button__send {
+.button__message {
   background: transparent;
   border: 1px solid transparent;
   color: #64a604;
@@ -1149,6 +1269,80 @@ footer {
   text-transform: uppercase;
 }
 
+.header__wrapper,
+.blog__wrapper,
+.form__wrapper {
+  position: relative;
+}
+
+.header__modal,
+.blog__modal,
+.contact__modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 30px 10px;
+  border-radius: 10px;
+  background: #999999;
+  color: #000000;
+  opacity: 0.96;
+  visibility: hidden;
+}
+
+.header__modal--close,
+.blog__modal--close,
+.contact__modal--close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.contact__modal--close:hover,
+.contact__modal--close:focus,
+.blog__modal--close:hover,
+.blog__modal--close:focus,
+.header__modal--close:hover,
+.header__modal--close:focus {
+  color: #f6f6f6;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.header__modal {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+}
+
+.blog__modal {
+  right: 51px;
+  left: 51px;
+  bottom: 240px;
+  height: 450px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact__modal {
+  right: 0;
+  left: 0;
+  bottom: 200px;
+  height: 500px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media (max-width: 1432px) {
   .recipes__wrapper,
   .blog__wrapper,
@@ -1235,11 +1429,22 @@ footer {
   .nav__link a {
     font-size: 0.85rem;
   }
+  .nav__search a {
+    font-size: 1.5rem;
+  }
   .image2 {
     right: 30px;
   }
   .blog__wrapper {
     padding: 70px 30px;
+  }
+  .blog__modal {
+    right: 30px;
+    left: 30px;
+    bottom: 150px;
+  }
+  .contact__modal {
+    bottom: 215px;
   }
   .footer__about {
     -webkit-box-flex: 1;
@@ -1256,17 +1461,59 @@ footer {
 }
 
 /* Portrait tablet and small desktops */
-@media (max-width: 940px) {
-  .home,
-  .blog,
-  .contact {
-    background-size: cover;
+@media (max-width: 972px) {
+  .header__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .header__nav,
+  .nav__list {
+    background: #f6f6f6;
+    opacity: 0.9;
+  }
+  .header__nav {
+    padding: 0 20px;
+  }
+  .nav__list a {
+    font-size: 1rem;
   }
   .nav__list {
+    margin-top: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
     visibility: hidden;
   }
+  .nav__link {
+    padding: 15px 0;
+  }
+  .nav__search {
+    position: absolute;
+    top: -5px;
+    right: 80px;
+  }
+  .cart__quantity {
+    bottom: 5px;
+  }
+  .show__links,
   .button__hamburger {
     visibility: visible;
+  }
+  .button__rotate {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  .nav__link.cart::before {
+    bottom: 13px;
+  }
+  .nav__link.cart::after {
+    bottom: 15px;
   }
   .image2 {
     right: -40px;
@@ -1278,12 +1525,43 @@ footer {
     max-width: 100%;
     padding: 40px 30px;
   }
+  .contact__modal {
+    bottom: 170px;
+    height: 480px;
+  }
+}
+
+@media (max-width: 876px) {
+  .contact__modal {
+    bottom: 245px;
+  }
+}
+
+@media (max-width: 780px) {
+  .contact__modal {
+    bottom: 260px;
+  }
 }
 
 /* Landscape phone to portrait tablet */
 @media (max-width: 768px) {
-  .header__wrapper h1 {
+  .header__wrapper h1,
+  .button__hamburger {
     font-size: 1.5rem;
+  }
+  .nav__search {
+    top: -10px;
+  }
+  .home__wrapper h2::after,
+  .info__text h2::after,
+  .testimonials h4::after {
+    content: "";
+    background: #64a604;
+    position: absolute;
+    top: 60%;
+    left: 45%;
+    height: 3px;
+    width: 50px;
   }
   .restaurant__info {
     padding: 120px 0 100px 0;
@@ -1305,12 +1583,6 @@ footer {
   .restaurant__testimonials {
     padding: 100px 0 150px 0;
   }
-  .angle--left {
-    left: 41%;
-  }
-  .angle--right {
-    right: 43%;
-  }
   .author__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1322,6 +1594,9 @@ footer {
   }
   .author__bio {
     margin-top: 20px;
+  }
+  .blog__modal {
+    height: 600px;
   }
   .comment__form,
   .contact__form,
@@ -1340,6 +1615,10 @@ footer {
   .form__wrapper textarea {
     width: 90vw;
   }
+  .contact__modal {
+    bottom: 150px;
+    height: 550px;
+  }
   .footer__blog {
     display: none;
   }
@@ -1350,6 +1629,11 @@ footer {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
+  .home,
+  .blog,
+  .contact {
+    height: 55vh;
+  }
   .home__wrapper,
   .recipes__wrapper,
   .blog__wrapper,
@@ -1357,6 +1641,21 @@ footer {
     max-width: 1500px;
     margin: 0 auto;
     width: 100%;
+  }
+  .nav__list {
+    margin-bottom: 0;
+  }
+  .nav__search {
+    background: #f6f6f6;
+    opacity: 0.9;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin: 0;
+    visibility: hidden;
+  }
+  .show__links {
+    visibility: visible;
   }
   .home__wrapper h2 {
     font-size: 1rem;
@@ -1369,7 +1668,6 @@ footer {
   .menu__text {
     padding: 70px 30px;
   }
-  .home__wrapper h2::after,
   .testimonials h4::after {
     content: "";
     background: #64a604;
@@ -1383,7 +1681,7 @@ footer {
     left: 35%;
   }
   .angle--right {
-    right: 38%;
+    right: 35%;
   }
   .blog__content h2 {
     font-size: 1.2rem;
@@ -1411,6 +1709,12 @@ footer {
   }
   .post div:nth-child(2) {
     padding: 0;
+  }
+  .header__modal--close,
+  .blog__modal--close,
+  .contact__modal--close {
+    right: 20px;
+    font-size: 1.5rem;
   }
   .social__form input {
     width: 80%;

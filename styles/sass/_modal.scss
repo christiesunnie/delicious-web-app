@@ -1,0 +1,68 @@
+// Modal parents style
+.header__wrapper,
+.blog__wrapper,
+.form__wrapper {
+    position: relative;
+}
+
+.header__modal,
+.blog__modal,
+.contact__modal {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    padding: 30px 10px;
+    border-radius: 10px;
+    background: $primary1;
+    color: $primary9;
+    opacity: 0.96;
+    visibility: hidden;
+}
+
+// Modal close button style
+.header__modal--close,
+.blog__modal--close,
+.contact__modal--close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.contact__modal--close:hover,
+.contact__modal--close:focus,
+.blog__modal--close:hover,
+.blog__modal--close:focus,
+.header__modal--close:hover,
+.header__modal--close:focus {
+    color: $primary2;
+    transform: scale(1.1);
+    transition: 200ms ease-in-out;
+}
+
+// Header modal style
+.header__modal {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+}
+
+// Blog page modal style
+.blog__modal {
+    right: 51px;
+    left: 51px;
+    bottom: 240px;
+    height: 450px;
+    align-items: center;
+}
+
+// Contact page modal style
+.contact__modal {
+    right: 0;
+    left: 0;
+    bottom: 200px;
+    height: 500px;
+    align-items: center;
+}

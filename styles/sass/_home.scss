@@ -81,6 +81,60 @@
     column-gap: 5px;
 }
 
+.menu__category {
+    position: relative;
+}
+
+.minus__circle,
+.plus__circle {
+    background: transparent;
+    border: 1px solid transparent;
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+
+.minus__circle {
+    right: 50px;
+}
+
+.plus__circle {
+    right: 10px;
+}
+
+.minus__circle:hover,
+.plus__circle:hover,
+.minus__circle:focus,
+.plus__circle:focus {
+    color: $secondary1;
+}
+
+// Modal cart shopping order styles
+.order__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order__name {
+    text-transform: uppercase;
+    padding-right: 20px;
+}
+
+.order__quantity {
+    font-weight: bold;
+}
+
+.order__item button {
+    position: unset;
+    margin: 0 10px;
+}
+
+.order__item button:hover,
+.order__item button:focus {
+    color: #fff;
+}
+
 .menu__category p {
     @include font__style($primary4, 14px, $line__height1, $letter__spacing1);
 }
@@ -88,6 +142,10 @@
 .recipes__text p,
 .info__text p {
     @include font__style($primary4, 0.9rem, $line__height1, $letter__spacing1);
+}
+
+.button__recipes a {
+    color: $primary2;
 }
 
 .button__recipes {
@@ -169,18 +227,40 @@
 
 .angle--left,
 .angle--right {
-    bottom: -70px;
-    font-size: 1.5rem;
     position: absolute;
+    bottom: 60px;
+    background: transparent;
+    border: 1px solid transparent;
+    font-size: 1.5rem;
+    color: #fff;
+    animation: bounce 1s infinite;
+    cursor: pointer;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1.5);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1.5);
+    }
 }
 
 .angle--left {
-    color: $secondary3;
-    left: 45%;
+    left: 44%;
 }
 
 .angle--right {
-    color: #fff;
-    font-weight: bold;
-    right: 46%;
+    right: 40%;
+}
+
+.angle--left:hover,
+.angle--right:hover,
+.angle--left:focus,
+.angle--right:focus {
+    border-radius: 5px;
 }
