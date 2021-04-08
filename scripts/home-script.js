@@ -45,7 +45,6 @@ let currentOrder = 0;
 // Function to create the new order
 const orderToDislay = function (item, quantity) {
     const orderList = document.querySelector(".order__list");
-
     const orderItem = `
     <div class="order__item">
         <p class="order__name">${item}</p>
