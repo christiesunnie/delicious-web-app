@@ -29,22 +29,12 @@ const testimonials = [
 const shoppingCart = document.querySelector(".cart");
 const modalContainer = document.querySelector(".header__modal");
 const modalClose = document.querySelector(".header__modal--close");
-const orderContainer = document.querySelector(".order");
-const orderList = document.querySelector(".order__list");
-
 // Tesimonials section DOM elements
-const testimonialContainer = document.querySelector(".testimonials");
-const testimonialClient = document.querySelector(".testimonial__client");
-const testimonialText = document.querySelector(".testimonial__text");
 const prevButton = document.querySelector(".angle--left");
 const nextButton = document.querySelector(".angle--right");
 
 // Homepage menu section DOM elements
 const menuContainer = document.querySelector(".menu__text");
-const minusButton = document.querySelector(".minus__circle");
-const plusButton = document.querySelector(".plus__circle");
-
-const buttons = document.querySelectorAll("button");
 
 // Set the index of the current item in the testimonial array
 let currentTestimonial = 0;
@@ -54,6 +44,7 @@ let currentOrder = 0;
 ////////////////////Functions////////////////////////////////
 // Function to create the new order
 const orderToDislay = function (item, quantity) {
+    const orderList = document.querySelector(".order__list");
     const orderItem = `
     <div class="order__item">
         <p class="order__name">${item}</p>
@@ -81,6 +72,8 @@ const orderToDislay = function (item, quantity) {
 
 // Function to get the data from testimonial array
 const testimonialsFunc = function (person) {
+    const testimonialClient = document.querySelector(".testimonial__client");
+    const testimonialText = document.querySelector(".testimonial__text");
     // Store the objects in the testimonial array
     const item = testimonials[person];
     // Print the client property on the page
@@ -131,8 +124,7 @@ nextButton.addEventListener("click", function () {
 
 // Adding the quantity of the order into the shopping cart event
 menuContainer.addEventListener("click", function (e) {
-    console.log(this.className);
-    console.log(e);
+    const orderContainer = document.querySelector(".order");
     const targetElement = e.target;
     // Get the name of the order's items
     const orderName =
