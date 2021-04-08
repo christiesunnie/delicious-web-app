@@ -1,10 +1,6 @@
 ///////////////////////////////////////////////////////////////
 //////////////////////Variables///////////////////////////////
 // Form section on the contact page DOM elements
-const userNameContact = document.getElementById("user__name__contact");
-const userEmailContact = document.getElementById("user__email__contact");
-const messageContact = document.getElementById("message__contact");
-const subjectContact = document.getElementById("subject__contact");
 const buttonMessage = document.querySelector(".button__message");
 const modalContainer = document.querySelector(".contact__modal");
 const modalClose = document.querySelector(".contact__modal--close");
@@ -13,7 +9,10 @@ const modalClose = document.querySelector(".contact__modal--close");
 ///////////////////Events//////////////////////////////////
 // Submit button on blog page and listen to the event
 buttonMessage.addEventListener("click", function () {
-    // document.querySelectorAll("textarea")
+    const userNameContact = document.getElementById("user__name__contact");
+    const userEmailContact = document.getElementById("user__email__contact");
+    const messageContact = document.getElementById("message__contact");
+    const subjectContact = document.getElementById("subject__contact");
     if (
         userNameContact.value === "" ||
         userEmailContact.value === "" ||

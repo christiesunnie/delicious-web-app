@@ -4,7 +4,6 @@
 const hamburger = document.querySelector(".button__hamburger");
 const navList = document.querySelector(".nav__list");
 const navSearch = document.querySelector(".nav__search");
-const cartQuantity = document.querySelector(".cart__quantity");
 
 //////////////////////////////////////////////////////////////
 ////////////////////Functions////////////////////////////////

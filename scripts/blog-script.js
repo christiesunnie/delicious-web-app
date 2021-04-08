@@ -2,15 +2,7 @@
 //////////////////////Variables///////////////////////////////
 // Form section on the blog page DOM elements
 const blogComment = document.querySelector(".blog__comments");
-const commentNumbers = document.querySelector(".comment__numbers");
-
-const blogForm = document.querySelector(".blog__form");
-const userNameBlog = document.getElementById("user__name__blog");
-const userEmailBlog = document.getElementById("user__email__blog");
-const userJobBlog = document.getElementById("user__job__blog");
-const commentBlog = document.getElementById("comment__blog");
 const buttonComment = document.querySelector(".button__comment");
-
 const modalContainer = document.querySelector(".blog__modal");
 const modalClose = document.querySelector(".blog__modal--close");
 
@@ -24,7 +16,6 @@ const options = {
 const formattedDate = new Intl.DateTimeFormat("en-US", options);
 const formattedToday = formattedDate.format(today);
 
-// Create the content of the error message for the form
 ////////////////////////////////////////////////////////////
 ///////////////////Functions///////////////////////////////
 // Function for formatting the date of comment post
@@ -68,6 +59,7 @@ const getCommentToLocalStorage = function () {
 
 // Function to update the comment
 const commentLength = (num) => {
+    const commentNumbers = document.querySelector(".comment__numbers");
     if (num < 10) {
         commentNumbers.textContent = `0${num}`;
     } else {
@@ -120,7 +112,10 @@ window.addEventListener("DOMContentLoaded", setupItems);
 
 // Submit button on blog page and listen to the event
 buttonComment.addEventListener("click", function () {
-    // document.querySelectorAll("textarea")
+    const userNameBlog = document.getElementById("user__name__blog");
+    const userJobBlog = document.getElementById("user__job__blog");
+    const commentBlog = document.getElementById("comment__blog");
+    const userEmailBlog = document.getElementById("user__email__blog");
     if (
         userNameBlog.value === "" ||
         userEmailBlog.value === "" ||
